@@ -25,13 +25,6 @@ begin
        values (unidProducto, unidUsuario, unPrecio, unaCantidad, unNombre, unDueño, unaFechaPublicacion);
 end
 
-CREATE FUNCTION recaudacionPara (unidproducto INT, fechayhora1 DATETIME, fechayhora2 DATETIME)
-                                 RETURN(FLOAT)
-BEGIN
-     DECLARE suma FLOAT;
-     SELECT SUM(precio)  INTO suma
-     FROM CompraVenta
-     WHERE idproducto = unidproducto
-     AND fechayhora BETWEEN fechayhora1 AND fechayhora2
+
 	
 
