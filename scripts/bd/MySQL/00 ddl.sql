@@ -32,7 +32,7 @@ CREATE TABLE Producto
 	Precio FLOAT(0) NOT NULL,
 	Cantidad MEDIUMINT NOT NULL,
 	Nombre VARCHAR(50) NOT NULL,
-	Due�o VARCHAR(50) NOT NULL,
+	Duenio VARCHAR(50) NOT NULL,
 	FechaPublicacion DATETIME NOT NULL,
 	idProducto INTEGER NOT NULL,
 	idUsuarioVendedor SMALLINT NOT NULL,
