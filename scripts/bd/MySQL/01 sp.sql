@@ -1,29 +1,30 @@
-
-create procedure altausuario (unNombre varchar(45),
-                             unApellido varchar(45),
-                             unTelefono TINYINT,
-                             unEmail varchar(45),
-                             unNombreusuario varchar (45),
-                             unacontrasenia varchar(45),
-                             unIdusuario smallint)
+DELIMITER//
+CREATE PROCEDURE altausuario (unNombre VARCHAR(45),
+                              unApellido VARCHAR(45),
+                              unTelefono TINYINT,
+                              unEmail varchar(45),
+                              unNombreUsuario VARCHAR(45),
+                              unaContrasenia VARCHAR(45),
+                              unidUsuario SMALLINT)
                             
-begin
-       insert into usuario (Nombre, Apellido, Telefono, Email, Nombreusuario, contrasenia, Idusuario)
-       values (unNombre, unApellido, unTelefono, unEmail, unNombreusuario, unacontrasenia, unIdusuario);
-end
+BEGIN
+       INSERT INTO Usuario (Nombre, Apellido, Telefono, Email, NombreUsuario, Contrasenia, idUsuario)
+       VALUES (unNombre, unApellido, unTelefono, unEmail, unNombreUsuario, SHA1(unaContrasenia), unidUsuario);
+END//
 
-create procedure altaproductoventa (unidProducto INT,
+DELIMETER//
+CREATE PROCEDURE altaproductoventa (unidProducto INT,
                                     unidUsuario INT, 
                                     unPrecio FLOAT,
                                     unaCantidad MEDIUMINT,
                                     unNombre VARCHAR(45),
-                                    unDueño VARCHAR(45),
+                                    unDuenio VARCHAR(45),
                                     unaFechaPublicacion DATETIME)
                             
-begin
-       insert into Producto (idProducto, idUsuario, Precio, Cantidad, Nombre, Dueño, FechaPublicacion)
-       values (unidProducto, unidUsuario, unPrecio, unaCantidad, unNombre, unDueño, unaFechaPublicacion);
-end
+BEGIN
+       INSERT INTO Producto (idProducto, idUsuario, Precio, Cantidad, Nombre, Duenio, FechaPublicacion)
+       values (unidProducto, unidUsuario, unPrecio, unaCantidad, unNombre, unDuenio, unaFechaPublicacion);
+END//
 
 
 	
