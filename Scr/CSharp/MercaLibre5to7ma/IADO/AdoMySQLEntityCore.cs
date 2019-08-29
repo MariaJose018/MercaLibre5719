@@ -24,7 +24,7 @@ namespace Mercalibre15.ADO
             SaveChanges();
         }
 
-        public void Aproductoventa(CompraVenta compraVenta)
+        public void Aproductoventa(Compraventa compraVenta)
         {
             Compraventa.Add(compraVenta);
             SaveChanges();
@@ -43,7 +43,7 @@ namespace Mercalibre15.ADO
             throw new System.NotImplementedException();
         }
 
-        public List<CompraVenta> obtenerventas()
+        public List<Compraventa> obtenerventas()
         {
             throw new System.NotImplementedException();
         }
