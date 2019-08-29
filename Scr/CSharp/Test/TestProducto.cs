@@ -6,7 +6,7 @@ using System.Text;
 
 
 
-namespace Test
+namespace TestPruebaMercalibre
 {
     [TestClass]
     public class TestProducto
