@@ -2,11 +2,17 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace MercaLibre5to7ma.ADO
+namespace Mercalibre15.ADO
 {
-    public interface IADO
+    interface IADO
     {
-        void Altausuario(Usuario usuario);
-        void Altaproductoventa(Producto producto);
+        void Ausuario(Usuario usuario);
+        List<Usuario> obtenerUsuarios();
+
+        void Aproductoventa(Compraventa compraVenta);
+        List<Compraventa> obtenerventas();
+
+        void aproducto(Producto producto);
+        List<Producto> obtenerproductos();
     }
 }

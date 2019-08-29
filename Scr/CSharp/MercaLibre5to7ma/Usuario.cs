@@ -3,9 +3,8 @@ using System.Collections.Generic;
 using System.Text;using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace MercaLibre5to7ma
+namespace Mercalibre15
 {
-    
     
         [Table("Usuario")]
         public class Usuario
