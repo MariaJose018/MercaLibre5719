@@ -1,6 +1,7 @@
 ﻿using System;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.Linq;
 
 namespace Mercalibre15
 {
@@ -36,7 +37,7 @@ namespace Mercalibre15
             {
 
             }
-
+            
 
             public Compraventa(Producto producto, Usuario usuario, int cantunidades, float precio, DateTime fechayhora)
             {
@@ -46,6 +47,8 @@ namespace Mercalibre15
                 Precio = precio;
                 Fechayhora = fechayhora;
             }
+
+
 
         }
 }

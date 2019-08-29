@@ -24,4 +24,6 @@ namespace TestIADOMysql
                 AdoMySQL.Database.EnsureCreated();
             }
         }
+    }
+}    
   

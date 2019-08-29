@@ -1,7 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Text;using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.Linq;
 
 namespace Mercalibre15
 {
@@ -48,6 +49,10 @@ namespace Mercalibre15
                 Contrasenia = contrasenia;
 
             }
-        }
+            public float recaudacionpara(byte id, DateTime f1, DateTime f2)
+            {
+              return  
+            }
+        }   
     
 }
