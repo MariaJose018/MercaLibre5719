@@ -33,11 +33,12 @@ namespace Mercalibre15
 
             [Column("contrasenia"), StringLength(45), Required]
             public string Contrasenia { get; set; }
+            public List<Compraventa> compras { get; set; }
 
 
 
 
-            public Usuario() { }
+        public Usuario() { }
 
             public Usuario(string nombre, string apellido, int telefono, string nombredeusuario, string email, string contrasenia)
             {
@@ -51,7 +52,7 @@ namespace Mercalibre15
             }
             public float recaudacionpara(byte id, DateTime f1, DateTime f2)
             {
-              return  
+            return compras.FindAll(h => h. (f1,f2));
             }
         }   
     

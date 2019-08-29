@@ -24,7 +24,7 @@ namespace Mercalibre15
             public string Nombre { get; set; }
 
             [Column("Precio"), Required]
-            public int Precio { get; set; }
+            public float PrecioUnitario { get; set; }
 
             [Column("cantidad"), Required]
             public int cantidad { get; set; }
@@ -41,12 +41,23 @@ namespace Mercalibre15
             {
                 fechapublicacion = fecha;
                 cantidad = cantidades;
-                Precio = precio;
+                PrecioUnitario = precio;
                 Nombre = nombre;
                 Compraventa = compraventa;
 
             }
+
         
+
+            public Producto(float precio) : this()
+            {
+                cambiarPrecioUnitario(precio);
+            }
+            public void cambiarPrecioUnitario(float precio)
+            {
+                PrecioUnitario = precio;
+            }
+
 
     }
 }
