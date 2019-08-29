@@ -1,4 +1,4 @@
-﻿using MercaLibre5to7ma;
+﻿using Mercalibre15;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
 using System.Collections.Generic;
@@ -6,7 +6,7 @@ using System.Text;
 
 
 
-namespace Test
+namespace TestPruebaMercalibre
 {
     [TestClass]
     public class TestProducto

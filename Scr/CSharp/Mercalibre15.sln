@@ -3,9 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.28307.489
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MercaLibre5to7ma", "MercaLibre5to7ma\MercaLibre5to7ma.csproj", "{25CE291E-6214-45E1-9717-B777CAEE4698}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Mercalibre15", "MercaLibre5to7ma\Mercalibre15.csproj", "{25CE291E-6214-45E1-9717-B777CAEE4698}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Test", "Test\Test.csproj", "{82CE85AB-235E-4390-B509-56F6685E54E5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TestPruebaMercalibre", "Test\TestPruebaMercalibre.csproj", "{82CE85AB-235E-4390-B509-56F6685E54E5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestIADOMysql", "TestIADOMysql\TestIADOMysql.csproj", "{1E2DD7EC-20E3-4EBC-B78D-DC6DD6F6973F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{82CE85AB-235E-4390-B509-56F6685E54E5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{82CE85AB-235E-4390-B509-56F6685E54E5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{82CE85AB-235E-4390-B509-56F6685E54E5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1E2DD7EC-20E3-4EBC-B78D-DC6DD6F6973F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1E2DD7EC-20E3-4EBC-B78D-DC6DD6F6973F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1E2DD7EC-20E3-4EBC-B78D-DC6DD6F6973F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1E2DD7EC-20E3-4EBC-B78D-DC6DD6F6973F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
