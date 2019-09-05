@@ -50,6 +50,11 @@ namespace Mercalibre15
             Contrasenia = contrasenia;
 
         }
+        public float recaudaciontotAL(DateTime inicio, DateTime fin)
+        {
+
+            return compras.FindAll(h => h.entre(inicio, fin)).Sum(l => l.Precio);
+        }
 
     }
 

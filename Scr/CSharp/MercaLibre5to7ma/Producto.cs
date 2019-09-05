@@ -32,6 +32,9 @@ namespace Mercalibre15
         [Column("fechapublicacion"), Required]
         public DateTime fechapublicacion { get; set; }
 
+        public List<Compraventa> ventas { get; set; }
+        
+
 
 
         public Producto() { }
@@ -45,6 +48,11 @@ namespace Mercalibre15
             Nombre = nombre;
             Compraventa = compraventa;
 
+        }
+        public float recaudacionpara(DateTime inicio, DateTime fin)
+        {
+           
+            return ventas.FindAll(h => h.entre(inicio, fin)).Sum(l => l.Precio);
         }
 
 

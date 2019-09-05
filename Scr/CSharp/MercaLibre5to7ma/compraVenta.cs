@@ -39,14 +39,22 @@ namespace Mercalibre15
         }
 
 
-        public Compraventa(Producto producto, Usuario usuario, int cantunidades, float precio, DateTime fechayhora)
+        public Compraventa(Producto producto, Usuario usuario, int cantunidades, DateTime fechayhora)
         {
             Producto = producto;
             Usuario = usuario;
             Cantunidades = cantunidades;
-            Precio = precio;
+            Precio = producto.PrecioUnitario;
             Fechayhora = fechayhora;
         }
+        public bool entre(DateTime inicio, DateTime fin)
+        {
+            return inicio <= Fechayhora && Fechayhora <= fin;
+        }
+
+        [NotMapped]
+        public double total => Cantunidades * Precio;
+
 
 
 
