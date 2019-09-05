@@ -46,6 +46,16 @@ namespace Mercalibre15
             Compraventa = compraventa;
 
         }
+        public void decrementarCantidad(short unidades)
+        {
+            cantidad -= unidades;
+        }
+
+        public void cambiarPrecio(float precio)
+        {
+            PrecioUnitario = precio;           
+        }
+
 
 
 
