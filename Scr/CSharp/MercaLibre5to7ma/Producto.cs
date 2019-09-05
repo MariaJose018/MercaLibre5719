@@ -49,11 +49,24 @@ namespace Mercalibre15
             Compraventa = compraventa;
 
         }
+<<<<<<< HEAD
         public float recaudacionpara(DateTime inicio, DateTime fin)
         {
            
             return ventas.FindAll(h => h.entre(inicio, fin)).Sum(l => l.Precio);
         }
+=======
+        public void decrementarCantidad(short unidades)
+        {
+            cantidad -= unidades;
+        }
+
+        public void cambiarPrecio(float precio)
+        {
+            PrecioUnitario = precio;           
+        }
+
+>>>>>>> 2b5c306441b37700876c67ea5ae2fbf51db43b08
 
 
 

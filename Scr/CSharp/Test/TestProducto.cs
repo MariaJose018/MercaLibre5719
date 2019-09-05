@@ -11,18 +11,33 @@ namespace TestPruebaMercalibre
     [TestClass]
     public class TestProducto
     {
-        Producto Jordan3 { get; set; }
+        Producto Producto { get; set; }
 
         [TestInitialize]
 
         public void creacionProducto()
         {
-            Jordan3 = new Producto() { Nombre = "Jordan 3" };
-            Jordan3.Nombre = "Air Jordan 3 OG";
-            Jordan3.PrecioUnitario = 12000;
-            Jordan3.cantidad = 1;
+            Producto = new Producto() { Nombre = "Jordan 3" };
+            Producto.Nombre = "Air Jordan 3 OG";
+            Producto.PrecioUnitario = 12000;
+            Producto.cantidad = 1;
         }
 
+        [TestMethod]
+        public void DecrementarCantidad()
+        {
+            Producto.decrementarCantidad(1);
+            Assert.AreEqual(12000, Producto.cantidad);
+        }
+
+        [TestMethod]
+        public void ProductoCambiarPrecio()
+        {
+            Assert.AreEqual(1, Producto);
+            Producto.cambiarPrecio(10000);
+            Assert.AreEqual(2, Producto);
+            Assert.AreEqual(10000, Producto.PrecioUnitario, 0.01);
+        }
 
 
 
