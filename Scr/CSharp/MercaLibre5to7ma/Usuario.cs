@@ -6,54 +6,51 @@ using System.Linq;
 
 namespace Mercalibre15
 {
-    
-        [Table("Usuario")]
-        public class Usuario
-        {
 
-            [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-            [Key, Column("idusuario")]
+    [Table("Usuario")]
+    public class Usuario
+    {
 
-            public byte Id { get; set; }
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+        [Key, Column("idusuario")]
 
-            [Column("Nombre"), StringLength(45), Required]
-            public string Nombre { get; set; }
+        public byte Id { get; set; }
 
-            [Column("Apellido"), StringLength(45), Required]
-            public string Apellido { get; set; }
+        [Column("Nombre"), StringLength(45), Required]
+        public string Nombre { get; set; }
 
-            [Column("Telefono"), Required]
-            public int Telefono { get; set; }
+        [Column("Apellido"), StringLength(45), Required]
+        public string Apellido { get; set; }
 
-            [Column("Nombredeusuario"), StringLength(45), Required]
-            public string Nombredeusuario { get; set; }
+        [Column("Telefono"), Required]
+        public int Telefono { get; set; }
 
-            [Column("Email"), StringLength(45), Required]
-            public string Email { get; set; }
+        [Column("Nombredeusuario"), StringLength(45), Required]
+        public string Nombredeusuario { get; set; }
 
-            [Column("contrasenia"), StringLength(45), Required]
-            public string Contrasenia { get; set; }
-            public List<Compraventa> compras { get; set; }
+        [Column("Email"), StringLength(45), Required]
+        public string Email { get; set; }
+
+        [Column("contrasenia"), StringLength(45), Required]
+        public string Contrasenia { get; set; }
+        public List<Compraventa> compras { get; set; }
 
 
 
 
         public Usuario() { }
 
-            public Usuario(string nombre, string apellido, int telefono, string nombredeusuario, string email, string contrasenia)
-            {
-                Nombre = nombre;
-                Apellido = apellido;
-                Telefono = telefono;
-                Nombredeusuario = nombredeusuario;
-                Email = email;
-                Contrasenia = contrasenia;
+        public Usuario(string nombre, string apellido, int telefono, string nombredeusuario, string email, string contrasenia)
+        {
+            Nombre = nombre;
+            Apellido = apellido;
+            Telefono = telefono;
+            Nombredeusuario = nombredeusuario;
+            Email = email;
+            Contrasenia = contrasenia;
 
-            }
-            public float recaudacionpara(byte id, DateTime f1, DateTime f2)
-            {
-            return compras.FindAll(h => h. (f1,f2));
-            }
-        }   
-    
+        }
+
+    }
+
 }
