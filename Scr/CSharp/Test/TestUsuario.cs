@@ -22,10 +22,7 @@ namespace TestPruebaMercalibre
             usuario.Contrasenia = "AlbertoyCristina";
 
         }
-        [TestMethod]
-        public void AgregarProductosEnVenta()
-        {
-            usuario.AgeregarProductos();
-        }
+
+
     }
 }
