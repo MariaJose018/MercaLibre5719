@@ -26,7 +26,7 @@ namespace TestPruebaMercalibre
         [TestMethod]
         public void DecrementarCantidad()
         {
-            Producto.decrementarCantidad(1);
+            Producto.DecrementarCantidad(1);
             Assert.AreEqual(12000, Producto.cantidad);
         }
 

@@ -20,7 +20,6 @@ namespace TestPruebaMercalibre
             usuario.Nombredeusuario = "AlbertocuAbierto";
             usuario.Email = "Alberto@gmail.com";
             usuario.Contrasenia = "AlbertoyCristina";
-
         }
 
 
