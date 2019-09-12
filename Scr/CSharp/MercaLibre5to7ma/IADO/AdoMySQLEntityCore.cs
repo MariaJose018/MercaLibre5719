@@ -53,11 +53,11 @@ namespace Mercalibre15.ADO
             throw new System.NotImplementedException();
         }
 
-        public List<Usuario> veriusus(Usuario usuario)
+
+        public List<Usuario> verificarUsuario(Usuario usuario)
         {
-            return usuario
-                   .Where(usu => usuario.Email = Usuario && usu => usuario.Contrasenia = Usuario)
-                   .ToList();
+           return Usuario.Where(Usuario => (usuario.Email = usuario) && (usuario => usuario.Contrasenia = usuario));
+ 
         }
 
     }

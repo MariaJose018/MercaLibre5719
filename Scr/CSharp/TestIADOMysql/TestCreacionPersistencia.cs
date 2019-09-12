@@ -18,7 +18,7 @@ namespace TestIADOMysql
         [ClassInitialize]
         public static void iniciarMERCA(TestContext context)
         {
-            intanciarPropiedadesEstaticas();
+          
             Ado = new AdoMySQLEntityCore();
             Ado.Database.EnsureDeleted();
             Ado.Database.EnsureCreated();
