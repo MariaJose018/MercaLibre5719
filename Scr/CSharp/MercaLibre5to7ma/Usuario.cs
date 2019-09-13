@@ -34,6 +34,7 @@ namespace Mercalibre15
         [Column("contrasenia"), StringLength(45), Required]
         public string Contrasenia { get; set; }
         public List<Compraventa> compras { get; set; }
+        public List<Producto> ventas {get; set ;}
 
 
 
@@ -50,10 +51,10 @@ namespace Mercalibre15
             Contrasenia = contrasenia;
 
         }
-        public float recaudaciontotAL(DateTime inicio, DateTime fin)
+        public double recaudaciontotAL(DateTime inicio, DateTime fin)
         {
 
-            return compras.FindAll(h => h.entre(inicio, fin)).Sum(l => l.Precio);
+            return ventas.FindAll(P => P.recaudacionpara(inicio ,fin ));
         }
 
     }
