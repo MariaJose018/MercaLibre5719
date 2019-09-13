@@ -17,8 +17,6 @@ namespace Mercalibre15
 
         public byte Id { get; set; }
 
-        [ForeignKey("idusuariovendedor"), Required]
-        public Compraventa Compraventa { get; set; }
 
         [Column("Producto"), StringLength(45), Required]
         public string Nombre { get; set; }
@@ -40,13 +38,12 @@ namespace Mercalibre15
         public Producto() { }
 
 
-        public Producto(string nombre, int precio, int cantidades, DateTime fecha, Compraventa compraventa)
+        public Producto(string nombre, int precio, int cantidades, DateTime fecha)
         {
             fechapublicacion = fecha;
             cantidad = cantidades;
             PrecioUnitario = precio;
             Nombre = nombre;
-            Compraventa = compraventa;
 
         }
         public float recaudacionpara(DateTime inicio, DateTime fin)

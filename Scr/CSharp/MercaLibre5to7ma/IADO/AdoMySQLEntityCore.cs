@@ -8,19 +8,19 @@ namespace Mercalibre15.ADO
     {
         public DbSet<Producto> Producto { get; set; }
         public DbSet<Compraventa> Compraventa { get; set; }
-        public DbSet<Usuario> Usuario { get; set; }
+        public DbSet<Usuario> Usuarios { get; set; }
 
 
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
 
-            optionsBuilder.UseMySQL("server=localhost;database=supermercado;user=supermercado;password=supermercado");
+            optionsBuilder.UseMySQL("server=localhost;database=MercaLibre;user=root;password=admin");
         }
 
         public void Ausuario(Usuario usuario)
         {
-            Usuario.Add(usuario);
+            Usuarios.Add(usuario);
             SaveChanges();
         }
 
@@ -54,11 +54,7 @@ namespace Mercalibre15.ADO
         }
 
 
-        public List<Usuario> verificarUsuario(Usuario usuario)
-        {
-           return Usuario.Where(Usuario => (usuario.Email = usuario) && (usuario => usuario.Contrasenia = usuario));
- 
-        }
-
+        public List<Usuario> verificarUsuario(string email, string contrasenia)
+            => Usuarios.Where(u => u.Email == email && u.Contrasenia == contrasenia).ToList();
     }
 }
