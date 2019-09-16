@@ -1,10 +1,5 @@
 ﻿using Mercalibre15;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using System;
-using System.Collections.Generic;
-using System.Text;
-
-
 
 namespace TestPruebaMercalibre
 {
@@ -27,7 +22,7 @@ namespace TestPruebaMercalibre
         public void DecrementarCantidad()
         {
             Producto.DecrementarCantidad(1);
-            Assert.AreEqual(12000, Producto.cantidad);
+            Assert.AreEqual(0, Producto.cantidad);
         }
 
         [TestMethod]
@@ -38,8 +33,5 @@ namespace TestPruebaMercalibre
             Assert.AreEqual(2, Producto);
             Assert.AreEqual(10000, Producto.PrecioUnitario, 0.01);
         }
-
-
-
     }
 }
