@@ -39,13 +39,13 @@ namespace Mercalibre15
         }
 
 
-        public Compraventa(Producto producto, Usuario usuario, int cantunidades, DateTime fechayhora)
+        public Compraventa(Producto producto, Usuario comprador, int cantunidades)
         {
             Producto = producto;
-            Usuario = usuario;
+            Usuario = comprador;
             Cantunidades = cantunidades;
             Precio = producto.PrecioUnitario;
-            Fechayhora = fechayhora;
+            Fechayhora = DateTime.Now;
         }
         public bool entre(DateTime inicio, DateTime fin)
         {
@@ -54,9 +54,5 @@ namespace Mercalibre15
 
         [NotMapped]
         public double total => Cantunidades * Precio;
-
-
-
-
     }
 }

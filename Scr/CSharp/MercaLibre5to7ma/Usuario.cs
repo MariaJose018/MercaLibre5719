@@ -40,6 +40,10 @@ namespace Mercalibre15
 
 
         public Usuario() { }
+        public void agregarCompraVenta()
+        {
+            List<Compraventa> compras
+        }
 
         public Usuario(string nombre, string apellido, int telefono, string nombredeusuario, string email, string contrasenia)
         {
@@ -57,6 +61,19 @@ namespace Mercalibre15
             return ventas.Sum(P => P.recaudacionpara(inicio ,fin ));
         }
 
+        public void vender(Producto producto, int cantidad)
+        {
+            
+        }
+        public void comprar(Producto producto, int cantidad)
+        {
+            if (producto.stockSuficiente(cantidad))
+            {
+                Compraventa compraVenta = new Compraventa(producto, this, cantidad);
+                producto.DecrementarCantidad(cantidad);
+                
+            }
+        }
     }
 
 }

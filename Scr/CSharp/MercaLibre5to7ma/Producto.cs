@@ -51,7 +51,7 @@ namespace Mercalibre15
            
             return productosEnVentas.FindAll(h => h.entre(inicio, fin)).Sum(l => l.Precio);
         }
-        public void DecrementarCantidad(short unidades)
+        public void DecrementarCantidad(int unidades)
         {
             cantidad -= unidades;
         }
@@ -61,7 +61,10 @@ namespace Mercalibre15
             PrecioUnitario = precio;           
         }
 
-
+        public bool stockSuficiente(int cantidad)
+        {
+            return cantidad <= this.cantidad;
+        }
 
 
 
