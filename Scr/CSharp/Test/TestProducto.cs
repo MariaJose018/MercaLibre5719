@@ -28,10 +28,8 @@ namespace TestPruebaMercalibre
         [TestMethod]
         public void ProductoCambiarPrecio()
         {
-            Assert.AreEqual(1, Producto);
-            Producto.cambiarPrecio(10000);
-            Assert.AreEqual(2, Producto);
-            Assert.AreEqual(10000, Producto.PrecioUnitario, 0.01);
+            Producto.cambiarPrecio(10000F);
+            Assert.AreEqual(10000F, Producto.PrecioUnitario, 0.00001);
         }
     }
 }
