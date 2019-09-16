@@ -51,10 +51,10 @@ namespace Mercalibre15
             Contrasenia = contrasenia;
 
         }
-        public double recaudaciontotAL(DateTime inicio, DateTime fin)
+        public double recaudacionTotal(DateTime inicio, DateTime fin)
         {
 
-            return ventas.FindAll(P => P.recaudacionpara(inicio ,fin ));
+            return ventas.Sum(P => P.recaudacionpara(inicio ,fin ));
         }
 
     }
