@@ -33,10 +33,7 @@ namespace Mercalibre15
 
 
 
-        public Compraventa()
-        {
-
-        }
+        public Compraventa(){}
 
 
         public Compraventa(Producto producto, Usuario comprador, int cantunidades)
