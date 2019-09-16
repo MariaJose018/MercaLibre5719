@@ -7,7 +7,6 @@ using System.Linq;
 
 namespace Mercalibre15
 {
-
     [Table("Producto")]
     public class Producto
     {
@@ -17,6 +16,9 @@ namespace Mercalibre15
 
         public short Id { get; set; }
 
+        [ForeignKey ("idvendedor") , Required]
+
+        public Usuario usuario { get; set; }
 
         [Column("Producto"), StringLength(45), Required]
         public string Nombre { get; set; }
