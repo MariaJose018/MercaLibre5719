@@ -14,7 +14,7 @@ namespace Mercalibre15
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         [Key, Column("id")]
 
-        public byte Id { get; set; }
+        public short Id { get; set; }
 
         [ForeignKey("idproducto"), Required]
         public Producto Producto { get; set; }

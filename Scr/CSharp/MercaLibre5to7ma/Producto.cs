@@ -15,7 +15,7 @@ namespace Mercalibre15
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         [Key, Column("idproducto")]
 
-        public byte Id { get; set; }
+        public short Id { get; set; }
 
 
         [Column("Producto"), StringLength(45), Required]
@@ -52,7 +52,8 @@ namespace Mercalibre15
 
         }
         public float recaudacionpara(DateTime inicio, DateTime fin)
-        {          
+        {
+           
             return productosEnVentas.FindAll(h => h.entre(inicio, fin)).Sum(l => l.Precio);
         }
         public void DecrementarCantidad(int unidades)
