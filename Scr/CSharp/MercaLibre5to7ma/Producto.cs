@@ -37,6 +37,11 @@ namespace Mercalibre15
 
         public Producto() { }
 
+        public void agregarventas (Compraventa compraventa)
+        {
+            productosEnVentas.Add(compraventa);
+        }
+
 
         public Producto(string nombre, int precio, int cantidades, DateTime fecha)
         {
@@ -47,8 +52,7 @@ namespace Mercalibre15
 
         }
         public float recaudacionpara(DateTime inicio, DateTime fin)
-        {
-           
+        {          
             return productosEnVentas.FindAll(h => h.entre(inicio, fin)).Sum(l => l.Precio);
         }
         public void DecrementarCantidad(int unidades)
