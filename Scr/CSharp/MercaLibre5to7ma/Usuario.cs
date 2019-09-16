@@ -62,7 +62,6 @@ namespace Mercalibre15
         }
         public double recaudacionTotal(DateTime inicio, DateTime fin)
         {
-
             return ventas.Sum(P => P.recaudacionpara(inicio ,fin ));
         }
 
