@@ -49,11 +49,9 @@ namespace Mercalibre15
             cantidad = cantidades;
             PrecioUnitario = precio;
             Nombre = nombre;
-
         }
         public float recaudacionpara(DateTime inicio, DateTime fin)
-        {
-           
+        {          
             return productosEnVentas.FindAll(h => h.entre(inicio, fin)).Sum(l => l.Precio);
         }
         public void DecrementarCantidad(int unidades)
