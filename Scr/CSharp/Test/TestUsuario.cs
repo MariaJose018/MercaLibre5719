@@ -10,6 +10,7 @@ namespace TestPruebaMercalibre
     public class TestUsuario
     {
         Usuario usuario { get; set; }
+
         [TestInitialize]
         public void CrearUsuario()
         {
