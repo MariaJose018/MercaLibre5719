@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
+using NETCore.Encrypt;
 
 namespace Mercalibre15
 {
@@ -57,8 +58,8 @@ namespace Mercalibre15
             Telefono = telefono;
             Nombredeusuario = nombredeusuario;
             Email = email;
-            Contrasenia = contrasenia;
-
+            Contrasenia = EncryptProvider.Sha256(contrasenia);
+            
         }
         public double recaudacionTotal(DateTime inicio, DateTime fin)
         {
