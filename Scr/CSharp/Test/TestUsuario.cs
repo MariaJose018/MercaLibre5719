@@ -9,17 +9,18 @@ namespace TestPruebaMercalibre
     [TestClass]
     public class TestUsuario
     {
-        Usuario usuario { get; set; }
+       
 
         [TestInitialize]
         public void CrearUsuario()
         {
-            usuario.Nombre = "Alberto";
-            usuario.Apellido = "Fernandez";
-            usuario.Telefono = 1134552177;
-            usuario.Nombredeusuario = "AlbertocuAbierto";
-            usuario.Email = "Alberto@gmail.com";
-            usuario.Contrasenia = "AlbertoyCristina";
+            Usuario unUsuario = new Usuario();
+            unUsuario.Nombre = "Alberto";
+            unUsuario.Apellido = "Fernandez";
+            unUsuario.Telefono = 1134552177;
+            unUsuario.Nombredeusuario = "AlbertocuAbierto";
+            unUsuario.Email = "Alberto@gmail.com";
+            unUsuario.Contrasenia = "AlbertoyCristina";
         }
 
 

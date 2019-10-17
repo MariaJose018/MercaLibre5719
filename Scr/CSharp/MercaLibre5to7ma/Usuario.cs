@@ -32,7 +32,7 @@ namespace Mercalibre15
         [Column("Email"), StringLength(45), Required]
         public string Email { get; set; }
 
-        [Column("contrasenia"), StringLength(45), Required]
+        [Column("contrasenia"), StringLength(64), Required]
         public string Contrasenia { get; set; }
         public List<Compraventa> compras { get; set; }
         public List<Producto> ventas {get; set ;}
@@ -58,7 +58,7 @@ namespace Mercalibre15
             Telefono = telefono;
             Nombredeusuario = nombredeusuario;
             Email = email;
-            Contrasenia = EncryptProvider.Sha256(contrasenia);
+            Contrasenia = contrasenia;
             
         }
         public double recaudacionTotal(DateTime inicio, DateTime fin)

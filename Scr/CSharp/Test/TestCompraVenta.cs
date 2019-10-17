@@ -6,15 +6,26 @@ namespace TestPruebaMercalibre
     [TestClass]
     public class TestCompraVenta
     {
-        Compraventa compraventa { get; set; }
 
         [TestInitialize]
         public void creaciondelaventacompra()
         {
-            compraventa.Producto.Nombre = new Compraventa () {  };
-            compraventa.Id = 010;
-            compraventa.Usuario.Nombredeusuario = 
-            Producto.cantidad = 1;
+            Producto unProducto = new Producto();
+            unProducto.Nombre = "Air Jordan 3 OG";
+            unProducto.PrecioUnitario = 12000;
+            unProducto.cantidad = 1;
+
+            Usuario unUsuario = new Usuario();
+            unUsuario.Nombre = "Alberto";
+            unUsuario.Apellido = "Fernandez";
+            unUsuario.Telefono = 1134552177;
+            unUsuario.Nombredeusuario = "AlbertocuAbierto";
+            unUsuario.Email = "Alberto@gmail.com";
+            unUsuario.Contrasenia = "AlbertoyCristina";
+
+            Compraventa unaCompraventa = new Compraventa();
+            unaCompraventa.Cantunidades = 1;
+            unaCompraventa.Precio = 10000;
         }
     }
 }
