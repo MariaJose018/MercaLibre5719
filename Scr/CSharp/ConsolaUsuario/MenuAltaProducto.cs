@@ -6,5 +6,6 @@ namespace ConsolaUsuario
 {
     class MenuAltaProducto
     {
+
     }
 }

@@ -34,16 +34,12 @@ namespace Mercalibre15
 
         public List<Compraventa> productosEnVentas { get; set; }
         
-
-
-
         public Producto() { }
 
         public void agregarventas (Compraventa compraventa)
         {
             productosEnVentas.Add(compraventa);
         }
-
 
         public Producto(string nombre, int precio, int cantidades, DateTime fecha)
         {
