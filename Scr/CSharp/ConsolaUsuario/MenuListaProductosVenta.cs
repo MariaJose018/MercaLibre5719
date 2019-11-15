@@ -1,12 +1,12 @@
 ﻿using System;
 
-namespace ConsolaAdministrador
+namespace ConsolaUsuario
 {
     class Program
     {
         static void Main(string[] args)
         {
-            
+            var menuAltaProducto = new MenuAltaCompraVenta();
         }
     }
 }

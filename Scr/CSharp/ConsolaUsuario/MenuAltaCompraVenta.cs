@@ -4,7 +4,7 @@ using System.Text;
 
 namespace ConsolaUsuario
 {
-    class MenuAltaProducto
+    class MenuAltaCompraVenta
     {
 
     }
