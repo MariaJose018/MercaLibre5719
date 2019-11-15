@@ -6,5 +6,6 @@ namespace ConsolaAdministrador
 {
     class MenuVerInformacion
     {
+
     }
 }

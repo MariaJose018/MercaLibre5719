@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Mercalibre15.ADO
 {
-    interface IADO
+    public interface IADO
     {
         void Ausuario(Usuario usuario);
         List<Usuario> obtenerUsuarios();
