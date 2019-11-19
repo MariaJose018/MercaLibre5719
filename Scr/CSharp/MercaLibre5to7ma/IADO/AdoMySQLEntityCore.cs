@@ -6,7 +6,7 @@ namespace Mercalibre15.ADO
 {
     public class AdoMySQLEntityCore : DbContext, IADO
     {
-        public DbSet<Producto> Producto { get; set; }
+        public DbSet<Producto> Productos { get; set; }
         public DbSet<Compraventa> Compraventa { get; set; }
         public DbSet<Usuario> Usuarios { get; set; }
 
@@ -32,7 +32,7 @@ namespace Mercalibre15.ADO
 
         public void aproducto(Producto producto)
         {
-            Producto.Add(producto);
+            Productos.Add(producto);
             SaveChanges();
         }
 
@@ -50,7 +50,8 @@ namespace Mercalibre15.ADO
 
         public List<Producto> obtenerproductos()
         {
-            throw new System.NotImplementedException();
+            return Productos
+                  .ToList();
         }
 
 

@@ -1,12 +1,15 @@
 ﻿using System;
+using MenuesConsola;
+using Mercalibre15;
+using NETCore.Encrypt;
+using System.Collections.Generic;
 
 namespace ConsolaUsuario
 {
-    class Program
-    {
-        static void Main(string[] args)
-        {
-            var menuAltaProducto = new MenuAltaCompraVenta();
-        }
+   public class MenuListaProductosVentas : MenuListador <Producto>
+   {
+        public override void imprimirElemento(Producto p) => Console.WriteLine(p.ToString());
+
+        public override List<Producto> obtenerLista() => AdoUsuario.ADO.obtenerproductos();
     }
 }

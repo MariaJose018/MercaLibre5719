@@ -13,6 +13,8 @@ namespace ConsolaUsuario
             Console.WriteLine($"{elemento.Nombre}\t\t{elemento.Nombredeusuario}");
         }
 
-        public override List<Usuario> obtenerLista() => .ADO.obtenerCajeros();
+        public override List<Usuario> obtenerLista() => AdoUsuario.ADO.obtenerUsuarios();
+       
     }
+}
 }
