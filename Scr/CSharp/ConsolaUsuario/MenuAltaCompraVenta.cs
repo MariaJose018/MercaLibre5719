@@ -36,7 +36,7 @@ namespace ConsolaUsuario
             {
                 Producto = producto,
                 Usuario = usuario,
-                Cantunidades = cantunidades,
+                Cantunidades = Cantunidades,
                 Precio = producto.PrecioUnitario,
                 Fechayhora = DateTime.Now,
             };
