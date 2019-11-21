@@ -10,7 +10,7 @@ namespace ConsolaAdministrador
         {
             public override void imprimirElemento(Producto p) => Console.WriteLine(p.ToString());
 
-            public override List<Producto> obtenerLista() => AdoGerete.ADO.obtenerproductos();
+            public override List<Producto> obtenerLista() => AdoAdministrador.ADO.obtenerproductos();
         }
     
 }
