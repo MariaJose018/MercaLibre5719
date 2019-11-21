@@ -4,6 +4,8 @@ using System.Text;
 using Mercalibre15;
 using MenuesConsola;
 using NETCore.Encrypt;
+using static System.ReadLine;
+
 
 namespace ConsolaUsuario
 {
@@ -18,7 +20,6 @@ namespace ConsolaUsuario
             var dni = Convert.ToInt32(prompt("Ingrese DNI"));
             var nombre = prompt("Ingrese nombre cajero");
             var apellido = prompt("Ingrese apellido");
-            //Uso la libreria System.ReadLine para leer una contraseña
             var pass = ReadPassword("Ingrese contraseña: ");
             pass = EncryptProvider.Sha256(pass);
 
@@ -31,7 +32,7 @@ namespace ConsolaUsuario
 
             try
             {
-                AdoUsuario.ADO.altaCajero(usuario);
+                AdoUsuario.ADO.altaUsuario(usuario);
                 Console.WriteLine("Cajero dada de alta con exito");
             }
             catch (Exception e)
