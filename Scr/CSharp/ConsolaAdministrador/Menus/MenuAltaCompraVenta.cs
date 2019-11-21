@@ -22,12 +22,14 @@ namespace ConsolaAdministrador
                 Nombre = "Alta Compra Venta";
             }
 
-            public override void mostrar()
+        
+
+        public override void mostrar()
             {
                 base.mostrar();
 
                 var nombre = prompt("Ingrese nombre del producto");
-                var usuario = (prompt("Ingrese el nombre del usuario"));
+                
                 var cantidad = Convert.ToInt16(prompt("Ingrese la cantidad"));
                 
                 var fechayhora = Convert.ToDateTime(prompt("Ingrese la fecha y hora"));
@@ -38,8 +40,7 @@ namespace ConsolaAdministrador
                 Compraventa compraventa = new Compraventa()
                 {
                     Producto = producto,
-                    Usuario = usuario,
-                    Cantunidades = Cantunidades,
+                    Cantunidades = cantidad,
                     Precio = producto.PrecioUnitario,
                     Fechayhora = DateTime.Now,
                 };

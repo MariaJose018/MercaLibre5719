@@ -7,7 +7,7 @@ using MenuesConsola;
 
 namespace ConsolaAdministrador.Menus
 {
-    public class MenuActualizarInformacion : MenuComponente
+    public class MenuActualizarUsuario : MenuComponente
     {
         public Usuario usuario { get; set; }
 

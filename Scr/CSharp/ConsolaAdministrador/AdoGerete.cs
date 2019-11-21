@@ -11,6 +11,6 @@ namespace ConsolaAdministrador
         /// Propiedad para acceso al ADO
         /// </summary>
         public static IADO ADO { get; set; } =
-            Fac.GetAdoDesdeJson("appsettings.json", "gerente");
+            Factory.GetAdoDesdeJson("appsettings.json", "gerente");
     }
 }
