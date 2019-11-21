@@ -13,7 +13,7 @@ namespace ConsolaAdministrador.Menus
                 Console.WriteLine(usuario);
             }
 
-            public override List<Usuario> obtenerLista() =>AdoGerete.ADO.obtenerUsuarios();
+            public override List<Usuario> obtenerLista() =>AdoAdministrador.ADO.obtenerUsuarios();
 
         }
     

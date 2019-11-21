@@ -22,11 +22,7 @@ namespace ConsolaAdministrador.Menus
         private void menuModificiarProducto()
         {
             bool cambio = false;
-            if (preguntaCerrada("¿Cambiar nombre?"))
-            {
-                Producto.Nombre = prompt("Ingrese nombre");
-                cambio = true;
-            }
+           
 
             if (preguntaCerrada("¿Incrementar stock?"))
             {
@@ -34,12 +30,18 @@ namespace ConsolaAdministrador.Menus
                 Producto.cantidad += cantidad;
                 cambio = true;
             }
+            if (preguntaCerrada("¿Decrementar stock?"))
+            {
+                var cantidad = Convert.ToInt16(prompt("Ingrese stock a decrementar"));
+                Producto.cantidad -= cantidad;
+                cambio = true;
+            }
 
             if (cambio)
             {
                 try
                 {
-                    AdoGerete.ADO.aproducto(Producto);
+                    AdoAdministrador.ADO.aproducto(Producto);
                     Console.WriteLine("Producto actualizado con exito");
                 }
                 catch (Exception e)

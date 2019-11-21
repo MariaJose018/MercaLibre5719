@@ -9,6 +9,9 @@ namespace Mercalibre15.ADO
     {
         public AdoMySQLEntityCore(DbContextOptions dbo) : base(dbo) { }
 
+        public AdoMySQLEntityCore()
+        {
+        }
 
         public DbSet<Producto> Productos { get; set; }
         public DbSet<Compraventa> Compraventa { get; set; }
