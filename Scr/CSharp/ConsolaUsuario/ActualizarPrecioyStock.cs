@@ -25,7 +25,7 @@ namespace ConsolaUsuario
             if (preguntaCerrada("¿Cambiar precio unitario?"))
             {
                 var precio = float.Parse(prompt("Precio Unitario"));
-                Producto.cambiarPrecioUnitario(precio);
+                Producto.cambiarPrecio(precio);
                 cambio = true;
             }
 
@@ -56,5 +56,10 @@ namespace ConsolaUsuario
                 }
                 Console.ReadKey();
             }   }
+
+        private bool preguntaCerrada(string v)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

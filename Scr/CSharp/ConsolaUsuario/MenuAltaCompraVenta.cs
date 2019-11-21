@@ -11,7 +11,7 @@ namespace ConsolaUsuario
     {
         private Compraventa compraventa { get; set; }
         private MenuListaProductosVentas MenuListaProductosVenta { get; set; }
-        public MenuListaUsuario menuListaUsuario { get; set; }
+        public MenuListaUsuario MenuListaUsuario { get; set; }
         public MenuAltaCompraVenta(MenuListaProductosVentas menuListaProductosVentas, MenuListaUsuario menuListaUsuario)
         {
             MenuListaProductosVenta = menuListaProductosVentas;
