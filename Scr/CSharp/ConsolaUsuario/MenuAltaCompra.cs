@@ -7,16 +7,16 @@ using Mercalibre15;
 
 namespace ConsolaUsuario
 {
-    class MenuAltaCompraVenta : MenuComponente
+    class MenuAltaCompra : MenuComponente
     {
         private Compraventa compraventa { get; set; }
         private MenuListaProductosVentas MenuListaProductosVenta { get; set; }
         public MenuListaUsuario MenuListaUsuario { get; set; }
-        public MenuAltaCompraVenta(MenuListaProductosVentas menuListaProductosVentas, MenuListaUsuario menuListaUsuario)
+        public MenuAltaCompra(MenuListaProductosVentas menuListaProductosVentas, MenuListaUsuario menuListaUsuario)
         {
             MenuListaProductosVenta = menuListaProductosVentas;
             MenuListaUsuario = menuListaUsuario;
-            Nombre = "Alta Compra Venta";
+            Nombre = "Alta Venta";
         }
 
         public override void mostrar()
