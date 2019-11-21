@@ -15,12 +15,7 @@ namespace ConsolaAdministrador
             private Compraventa compraventa { get; set; }
             private MenuListaProductosVentas MenuListaProductosVenta { get; set; }
             public menuListaUsuario MenuListaUsuario { get; set; }
-            public MenuAltaCompraVenta(MenuListaProductosVentas menuListaProductosVentas, menuListaUsuario menuListaUsuario)
-            {
-                MenuListaProductosVenta = menuListaProductosVentas;
-                MenuListaUsuario = menuListaUsuario;
-                Nombre = "Alta Compra Venta";
-            }
+            
 
         
 

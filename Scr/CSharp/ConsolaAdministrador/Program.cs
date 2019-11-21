@@ -9,7 +9,7 @@ namespace ConsolaAdministrador
         {
             var menuActualizarProducto = new MenuActualizarProducto() {Nombre = "Actualizar Productos" };
             var menuActualizarUsuario = new MenuActualizarUsuario () {Nombre = "Actualizar Usuario" };
-            var menuAltaCompraVenta = new MenuAltaCompraVenta () { };
+            var menuAltaCompraVenta = new MenuAltaCompraVenta () {Nombre ="Alta Ventas" };
             var menuAltaProducto = new MenuAltaProducto() {Nombre =" Alta Producto"};
             var menuListaProductoVenta = new MenuListaProductosVentas () {Nombre = "Ñista de Ventas "};
             var menuListaUsuario = new menuListaUsuario () {Nombre = "Lista de Usuarios"};
