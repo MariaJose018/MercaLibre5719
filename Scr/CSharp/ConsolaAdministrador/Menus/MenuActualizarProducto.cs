@@ -1,9 +1,12 @@
-﻿using Mercalibre15;
-using System;
+﻿using System;
+using System.Collections.Generic;
+using System.Text;
+using Mercalibre15;
+using MenuesConsola;
 
 namespace ConsolaAdministrador.Menus
 {
-    public class MenuActualizarProducto : MenuListaProductoVenta
+    public class MenuActualizarProducto : MenuListaProductosVentas
     {
         public Producto Producto { get; set; }
         public override void mostrar()
@@ -11,7 +14,7 @@ namespace ConsolaAdministrador.Menus
             Console.Clear();
             Console.WriteLine(Producto);
 
-            Producto = 
+            Producto = seleccionarElemento();
             Console.WriteLine();
             menuModificiarProducto();
         }
@@ -25,17 +28,10 @@ namespace ConsolaAdministrador.Menus
                 cambio = true;
             }
 
-            if (preguntaCerrada("¿Cambiar precio unitario?"))
-            {
-                var precio = float.Parse(prompt("Precio Unitario"));
-                Producto.cambiarPrecioUnitario(precio);
-                cambio = true;
-            }
-
             if (preguntaCerrada("¿Incrementar stock?"))
             {
                 var cantidad = Convert.ToInt16(prompt("Ingrese stock a incrementar"));
-                Producto.Cantidad += cantidad;
+                Producto.cantidad += cantidad;
                 cambio = true;
             }
 
@@ -43,7 +39,7 @@ namespace ConsolaAdministrador.Menus
             {
                 try
                 {
-                    AdoGerente.ADO.actualizarProducto(Producto);
+                    AdoGerete.ADO.aproducto(Producto);
                     Console.WriteLine("Producto actualizado con exito");
                 }
                 catch (Exception e)
@@ -52,6 +48,12 @@ namespace ConsolaAdministrador.Menus
                 }
                 Console.ReadKey();
             }
+
+            
+        }
+        private bool preguntaCerrada(string v)
+        {
+            throw new NotImplementedException();
         }
     }
 }

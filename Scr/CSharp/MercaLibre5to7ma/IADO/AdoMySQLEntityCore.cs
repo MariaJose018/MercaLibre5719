@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using JetBrains.Annotations;
+using Microsoft.EntityFrameworkCore;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -6,6 +7,9 @@ namespace Mercalibre15.ADO
 {
     public class AdoMySQLEntityCore : DbContext, IADO
     {
+        public AdoMySQLEntityCore(DbContextOptions dbo) : base(dbo) { }
+
+
         public DbSet<Producto> Productos { get; set; }
         public DbSet<Compraventa> Compraventa { get; set; }
         public DbSet<Usuario> Usuarios { get; set; }
