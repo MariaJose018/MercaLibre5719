@@ -15,7 +15,7 @@ namespace ConsolaUsuario
         public MenuAltaCompraVenta(MenuListaProductosVentas menuListaProductosVentas, MenuListaUsuario menuListaUsuario)
         {
             MenuListaProductosVenta = menuListaProductosVentas;
-            menuListaUsuario = menuListaUsuario;
+            MenuListaUsuario = menuListaUsuario;
             Nombre = "Alta Compra Venta";
         }
 
