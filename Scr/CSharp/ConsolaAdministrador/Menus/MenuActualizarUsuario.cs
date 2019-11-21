@@ -54,7 +54,7 @@ namespace ConsolaAdministrador.Menus
             {
                 try
                 {
-                    AdoGerete.ADO.Ausuario(usuario);
+                    AdoAdministrador.ADO.Ausuario(usuario);
                     Console.WriteLine("Información actualizada con exito");
                 }
                 catch (Exception e)
