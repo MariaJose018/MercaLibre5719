@@ -61,5 +61,10 @@ namespace Mercalibre15.ADO
 
         public List<Usuario> verificarUsuario(string email, string contrasenia)
             => Usuarios.Where(u => u.Email == email && u.Contrasenia == contrasenia).ToList();
+
+        public void altaUsuario(Usuario usuario)
+        {
+            throw new System.NotImplementedException();
+        }
     }
 }

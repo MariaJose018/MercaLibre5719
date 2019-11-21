@@ -29,7 +29,7 @@ namespace ConsolaAdministrador.Menus
 
             try
             {
-                AdoAdministrador.ADO.aproducto(Producto);
+                AdoGerete.ADO.aproducto(Producto);
                 Console.WriteLine("Producto dado de alta con exito");
             }
             catch (Exception e)

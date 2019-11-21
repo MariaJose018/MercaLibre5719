@@ -42,7 +42,7 @@ namespace ConsolaAdministrador
 
                 try
                 {
-                    AdoAdministrador.ADO.Aproductoventa(compraventa);
+                    AdoGerete.ADO.Aproductoventa(compraventa);
                     Console.WriteLine("Producto dado de alta con exito");
                 }
                 catch (Exception e)
