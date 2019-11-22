@@ -8,6 +8,7 @@ namespace ConsolaUsuario
 {
     public class Login : MenuComponente
     {
+       
         private Usuario usuario { get; set; }
         private MenuCompuesto PrincipalUsuario { get; set; }
 
@@ -16,7 +17,7 @@ namespace ConsolaUsuario
         {
             base.mostrar();
 
-            var correo = ReadPassword("Ingrese su correo: ");
+            var correo = Read("Ingrese su correo: ");
             var pass = ReadPassword("Ingrese contraseña: ");
             pass = EncryptProvider.Sha256(pass);
 
@@ -34,9 +35,9 @@ namespace ConsolaUsuario
                     PrincipalUsuario.mostrar();
                 }
             }
-            catch (Exception e)
+            catch (Exception ex)
             {
-                Console.WriteLine($"No se pudo iniciar sesion debido a un error: {e.Message}");
+                Console.WriteLine($"No se pudo iniciar sesion debido a un error: {ex.Message}");
                 Console.ReadKey();
             }
         }

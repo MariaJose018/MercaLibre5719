@@ -3,7 +3,7 @@ using ConsolaAdministrador.Menus;
 
 namespace ConsolaAdministrador
 {
-    class Program
+    public class Program
     {
         static void Main(string[] args)
         {
@@ -24,7 +24,7 @@ namespace ConsolaAdministrador
             menuUsuario.agregarMenu(menuActualizarUsuario);
             menuUsuario.agregarMenu(menuListaUsuario);
 
-            var menuProductoVenta = new MenuCompuesto() { Nombre = "Productos" };
+            var menuProductoVenta = new MenuCompuesto() { Nombre = "Productos ventas" };
             menuProductoVenta.agregarMenu(menuAltaCompraVenta);
             menuProductoVenta.agregarMenu(menuListaProductoVenta);
 

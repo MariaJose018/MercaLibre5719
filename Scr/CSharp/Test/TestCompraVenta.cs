@@ -1,4 +1,5 @@
 ﻿using Mercalibre15;
+
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace TestPruebaMercalibre
@@ -6,10 +7,12 @@ namespace TestPruebaMercalibre
     [TestClass]
     public class TestCompraVenta
     {
+       
 
         [TestInitialize]
         public void creaciondelaventacompra()
         {
+
             Producto unProducto = new Producto();
             unProducto.Nombre = "Air Jordan 3 OG";
             unProducto.PrecioUnitario = 12000;

@@ -8,6 +8,6 @@ namespace ConsolaUsuario
     public static class AdoUsuario
     {
         public static IADO ADO { get; set; } =
-            Factory.GetAdoDesdeJson("appsettings.json", "usuario");
+            FactoryADOMysql.GetAdoDesdeJson("appsettings.json", "usuario");
     }
 }

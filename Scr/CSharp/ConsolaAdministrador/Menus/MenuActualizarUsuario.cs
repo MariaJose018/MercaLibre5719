@@ -33,12 +33,6 @@ namespace ConsolaAdministrador.Menus
                 cambio = true;
             }
 
-            if (preguntaCerrada("¿Cambiar apellido?"))
-            {
-                usuario.Apellido = prompt("Ingrese apellido:");
-                cambio = true;
-            }
-
             if (preguntaCerrada("¿Cambiar teléfono?"))
             {
                 usuario.Telefono = int.Parse("Ingrese un teléfono:");

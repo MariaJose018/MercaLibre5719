@@ -69,5 +69,10 @@ namespace Mercalibre15.ADO
         {
             throw new System.NotImplementedException();
         }
+
+        public Usuario usuarioporcorreoPass(string correo, string passEncriptada)
+        {
+            throw new System.NotImplementedException();
+        }
     }
 }

@@ -18,13 +18,20 @@ namespace ConsolaAdministrador
             var nombre = prompt("Ingrese nombre del usuario");
             var apellido = prompt("Ingrese apellido");
             var pass = ReadPassword("Ingrese contraseña: ");
+            var mail = prompt("Ingrese mail "); 
+            var telefono = Convert.ToInt16(prompt("Ingrese telefono"));
+            var nombreusuario = prompt("Ingrese nombre de usuario");
             pass = EncryptProvider.Sha256(pass);
 
             usuario = new Usuario()
             {
                 Apellido = apellido,
                 Nombre = nombre,
-                Contrasenia = pass
+                Contrasenia = pass,
+                Email = mail,
+                Telefono = telefono,
+                Nombredeusuario = nombreusuario
+                
             };
 
             try

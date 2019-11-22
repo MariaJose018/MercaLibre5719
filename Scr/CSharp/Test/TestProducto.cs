@@ -21,15 +21,5 @@ namespace TestPruebaMercalibre
             unProducto.cambiarPrecio(10000F);
             Assert.AreEqual(10000F, unProducto.PrecioUnitario, 0.00001);
         }
-
-        [TestMethod]
-        public void DecrementarCantidad()
-        {
-        }
-
-        [TestMethod]
-        public void ProductoCambiarPrecio()
-        {
-        }
     }
 }

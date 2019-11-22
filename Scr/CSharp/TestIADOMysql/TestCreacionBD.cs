@@ -1,5 +1,4 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using Mercalibre15;
 using Mercalibre15.ADO;
 
 namespace TestIADOMysql
