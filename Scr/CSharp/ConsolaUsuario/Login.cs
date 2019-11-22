@@ -3,6 +3,7 @@ using NETCore.Encrypt;
 using Mercalibre15;
 using System;
 using static System.ReadLine;
+using ConsolaUsuario;
 
 namespace ConsolaUsuario
 {
@@ -23,7 +24,7 @@ namespace ConsolaUsuario
 
             try
             {
-                usuario = AdoUsuario.ADO.usuarioporcorreoPass(correo, pass);
+                usuario = AdoUsuario.ADO.verificarUsuario(correo, pass);
                 if (usuario is null)
                 {
                     Console.WriteLine("DNI o contraseña incorrecta");
@@ -37,33 +38,35 @@ namespace ConsolaUsuario
             }
             catch (Exception ex)
             {
-                Console.WriteLine($"No se pudo iniciar sesion debido a un error: {ex.Message}");
+                Console.WriteLine($"No se pudo iniciar sesion debido a un error: {ex.InnerException.Message}");
                 Console.ReadKey();
             }
         }
 
         private void instanciarMenuesParausu(Usuario usuario)
         {
-            var menuAltaProducto = new MenuAltaProducto(usuario);
-            var menuAltaCompra = new MenuAltaCompra (usuario);
-            var menuListaProductosVentas = new MenuListaProductosVentas(usuario);
-            var menuListaUusario = new MenuListaUsuario(usuario);
-            var menuActualiarInformacion = new MenuActualizarInformacion (usuario);
-            var menuVerificarInformacion = new MenuVerInformacion(usuario);
-            var menuActualizarPrecio = new ActualizarPrecioyStock(usuario);
-
-            PrincipalUsuario = new MenuCompuesto(menuAltaProducto) { Nombre = "Menu usuario" };
-            PrincipalUsuario = new MenuCompuesto(menuAltaCompra) { Nombre = "Menu Usuario" };
-            PrincipalUsuario = new MenuCompuesto(menuListaProductosVentas) { Nombre = "menu Usuario" };
-            PrincipalUsuario = new MenuCompuesto(menuListaUusario) { Nombre = "menu usuario" };
-            PrincipalUsuario = new MenuCompuesto(menuActualiarInformacion) { Nombre = "menu usuario" };
-            PrincipalUsuario = new MenuCompuesto (menuVerificarInformacion) {Nombre = "menu usuario"  };
-            PrincipalUsuario = new MenuCompuesto(menuActualizarPrecio) { Nombre = "menu usuario" };
-
-
-
-
             
+
+
+
+            var menuAltaCompra = new MenuAltaCompra(usuario) { Nombre = "Alta Ventas" };
+            var menuAltaProducto = new MenuAltaProducto(usuario) { Nombre = " Alta Producto" };
+            var menuListaProductoVenta = new MenuListaProductosVentas(usuario) { Nombre = "Lista de productos en ventas " };
+            var menuActualizarPrecioyStock = new ActualizarPrecioyStock(usuario) { Nombre = "Actualizar precio y stock" };
+
+            var menuProducto = new MenuCompuesto() { Nombre = "Productos" };
+            menuProducto.agregarMenu(menuListaProductoVenta);
+            menuProducto.agregarMenu(menuAltaProducto);
+            menuProducto.agregarMenu(menuActualizarPrecioyStock);
+
+            var menuAltaVenta = new MenuCompuesto() { Nombre = "Usuarios" };
+            menuAltaVenta.agregarMenu(menuAltaVenta);
+            menuAltaVenta.agregarMenu(menuListaProductoVenta);
+            
+            var PrincipalUsuario = new MenuCompuesto() { Nombre = "Menu Administrador" };
+            PrincipalUsuario.agregarMenu(menuProducto);
+
+            PrincipalUsuario.agregarMenu(PrincipalUsuario);
         }
     }
 }

@@ -58,9 +58,6 @@ namespace ConsolaAdministrador.Menus
                 Console.ReadKey();
             }
         }
-        private bool preguntaCerrada(string v)
-        {
-            throw new NotImplementedException();
-        }
+        
     }
 }

@@ -1,37 +1,17 @@
-﻿using Mercalibre15;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using MenuesConsola;
+using Mercalibre15;
 
-namespace ConsolaUsuario
+namespace ConsolaAdministrador
 {
-    public class ActualizarPrecioyStock : MenuListaProductosVentas
+    class ActualizarStock : MenuComponente
     {
-        public ActualizarPrecioyStock(Usuario usuario) : base(usuario)
-        {
-        }
-
-        public Producto producto { get; set; }
-        public override void mostrar()
-        {
-            Console.Clear();
-            Console.WriteLine(Nombre);
-
-            producto = seleccionarElemento();
-            Console.WriteLine();
-            menuModificiarProducto();
-        }
-
+        private Producto producto { get; set; } 
         private void menuModificiarProducto()
         {
             bool cambio = false;
-
-            if (preguntaCerrada("¿Cambiar precio unitario?"))
-            {
-                var precio = float.Parse(prompt("Precio Unitario"));
-                producto.cambiarPrecio(precio);
-                cambio = true;
-            }
 
             if (preguntaCerrada("¿Incrementar stock?"))
             {
@@ -46,11 +26,12 @@ namespace ConsolaUsuario
                 producto.cantidad -= cantidad;
                 cambio = true;
             }
+
             if (cambio)
             {
                 try
                 {
-                    AdoUsuario.ADO.aproducto(producto);
+                    AdoAdministrador.ADO.aproducto(producto);
                     Console.WriteLine("Producto actualizado con exito");
                 }
                 catch (Exception e)
@@ -59,9 +40,7 @@ namespace ConsolaUsuario
                 }
                 Console.ReadKey();
             }
-
-
-
         }
+
     }
 }

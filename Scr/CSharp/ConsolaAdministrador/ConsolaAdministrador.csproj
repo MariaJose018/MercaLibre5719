@@ -10,6 +10,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\ConsolaUsuario\ConsolaUsuario.csproj" />
     <ProjectReference Include="..\MercaLibre5to7ma\Mercalibre15.csproj" />
   </ItemGroup>
 

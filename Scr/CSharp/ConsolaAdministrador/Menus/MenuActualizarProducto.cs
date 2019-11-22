@@ -53,9 +53,6 @@ namespace ConsolaAdministrador.Menus
 
             
         }
-        private bool preguntaCerrada(string v)
-        {
-            throw new NotImplementedException();
-        }
+        
     }
 }

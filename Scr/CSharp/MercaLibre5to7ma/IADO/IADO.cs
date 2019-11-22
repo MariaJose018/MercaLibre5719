@@ -15,7 +15,6 @@ namespace Mercalibre15.ADO
         void aproducto(Producto producto);
         List<Producto> obtenerproductos();
 
-        void altaUsuario(Usuario usuario);
-        Usuario usuarioporcorreoPass(string correo , string passEncriptada);
+        Usuario verificarUsuario(string email, string contrasenia);
     }
 }
