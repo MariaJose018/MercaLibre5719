@@ -30,13 +30,13 @@ namespace ConsolaUsuario
             var fechayhora = Convert.ToDateTime(prompt("Ingrese la fecha y hora"));
             Console.WriteLine("Seleccione el Producto x)");
             var producto = MenuListaProductosVenta.seleccionarElemento();
-            var Usuario = MenuListaProductosVenta.seleccionarElemento();
+            var Usuario = MenuListaUsuario.seleccionarElemento();
 
             Compraventa compraventa = new Compraventa()
             {
                 Producto = producto,
-                Usuario = usuario,
-                Cantunidades = Cantunidades,
+                Usuario = Usuario,
+                Cantunidades = cantidad,
                 Precio = producto.PrecioUnitario,
                 Fechayhora = DateTime.Now,
             };
