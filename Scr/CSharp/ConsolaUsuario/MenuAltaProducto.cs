@@ -41,7 +41,7 @@ namespace ConsolaUsuario
             }
             catch (Exception e)
             {
-                Console.WriteLine($"No se pudo dar de alta el producto: {e.Message}");
+                Console.WriteLine($"No se pudo dar de alta el producto: {e.InnerException.Message}");
             }
             Console.ReadKey();
         }

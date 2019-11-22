@@ -27,13 +27,15 @@ namespace ConsolaUsuario
                 usuario = AdoUsuario.ADO.verificarUsuario(correo, pass);
                 if (usuario is null)
                 {
-                    Console.WriteLine("DNI o contraseña incorrecta");
+                    Console.WriteLine("Correo o contraseña incorrecta");
                     Console.ReadKey();
                 }
                 else
                 {
+
                     instanciarMenuesParausu(usuario);
                     PrincipalUsuario.mostrar();
+
                 }
             }
             catch (Exception ex)
@@ -45,10 +47,7 @@ namespace ConsolaUsuario
 
         private void instanciarMenuesParausu(Usuario usuario)
         {
-            
-
-
-
+           
             var menuAltaCompra = new MenuAltaCompra(usuario) { Nombre = "Alta Ventas" };
             var menuAltaProducto = new MenuAltaProducto(usuario) { Nombre = " Alta Producto" };
             var menuListaProductoVenta = new MenuListaProductosVentas(usuario) { Nombre = "Lista de productos en ventas " };
@@ -59,11 +58,11 @@ namespace ConsolaUsuario
             menuProducto.agregarMenu(menuAltaProducto);
             menuProducto.agregarMenu(menuActualizarPrecioyStock);
 
-            var menuAltaVenta = new MenuCompuesto() { Nombre = "Usuarios" };
-            menuAltaVenta.agregarMenu(menuAltaVenta);
-            menuAltaVenta.agregarMenu(menuListaProductoVenta);
+            var menuVenta = new MenuCompuesto() { Nombre = "Usuarios" };
+            menuVenta.agregarMenu(menuAltaCompra);
+            menuVenta.agregarMenu(menuListaProductoVenta);
             
-            var PrincipalUsuario = new MenuCompuesto() { Nombre = "Menu Administrador" };
+            PrincipalUsuario = new MenuCompuesto() { Nombre = "Menu Administrador" };
             PrincipalUsuario.agregarMenu(menuProducto);
 
             PrincipalUsuario.agregarMenu(PrincipalUsuario);

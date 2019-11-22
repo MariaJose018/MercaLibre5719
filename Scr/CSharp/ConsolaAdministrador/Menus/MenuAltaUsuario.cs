@@ -36,7 +36,7 @@ namespace ConsolaAdministrador
 
             try
             {
-                AdoAdministrador.ADO.altaUsuario(usuario);
+                AdoAdministrador.ADO.Ausuario(usuario);
                 Console.WriteLine("usuario dada de alta con exito");
             }
             catch (Exception e)

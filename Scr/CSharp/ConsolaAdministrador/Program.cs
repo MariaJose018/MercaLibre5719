@@ -24,6 +24,7 @@ namespace ConsolaAdministrador
             var menuUsuario = new MenuCompuesto() { Nombre = "Usuarios" };
             menuUsuario.agregarMenu(menuActualizarUsuario);
             menuUsuario.agregarMenu(menuListaUsuario);
+            menuUsuario.agregarMenu(menuAltaUsuario);
 
             var menuProductoVenta = new MenuCompuesto() { Nombre = "Productos ventas" };
             menuProductoVenta.agregarMenu(menuAltaCompraVenta);
