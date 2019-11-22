@@ -8,6 +8,13 @@ namespace ConsolaUsuario
 {
     public class MenuListaUsuario : MenuListador<Usuario>
     {
+        private Usuario usuario;
+
+        public MenuListaUsuario(Usuario usuario)
+        {
+            this.usuario = usuario;
+        }
+
         public override void imprimirElemento(Usuario usuario)
         {
             Console.WriteLine(usuario);

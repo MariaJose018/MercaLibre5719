@@ -8,7 +8,7 @@ namespace ConsolaUsuario
 {
     public class Login : MenuComponente
     {
-        private Usuario Usuario { get; set; }
+        private Usuario usuario { get; set; }
         private MenuCompuesto PrincipalUsuario { get; set; }
 
 
@@ -16,21 +16,21 @@ namespace ConsolaUsuario
         {
             base.mostrar();
 
-            var dni = Convert.ToInt32(prompt("Ingrese dni"));
+            var correo = ReadPassword("Ingrese su correo: ");
             var pass = ReadPassword("Ingrese contraseña: ");
             pass = EncryptProvider.Sha256(pass);
 
             try
             {
-                Usuario = AdoUsuario.ADO.(dni, pass);
-                if (Cajero is null)
+                usuario = AdoUsuario.ADO.usuarioporcorreoPass(correo, pass);
+                if (usuario is null)
                 {
                     Console.WriteLine("DNI o contraseña incorrecta");
                     Console.ReadKey();
                 }
                 else
                 {
-                    instanciarMenuesPara(Cajero);
+                    instanciarMenuesParausu(usuario);
                     PrincipalUsuario.mostrar();
                 }
             }
@@ -41,12 +41,31 @@ namespace ConsolaUsuario
             }
         }
 
-        private void instanciarMenuesPara(Cajero cajero)
+        private void instanciarMenuesParausu(Usuario usuario)
         {
-            var menuAltaTicket = new MenuAltaTicket(cajero);
-            //De haber mas menues para el cajero, se siguen instanciado aca
+            var menuAltaProducto = new MenuAltaProducto(usuario);
+            var menuAltaCompra = new MenuAltaCompra (usuario);
+            var menuListaProductosVentas = new MenuListaProductosVentas(usuario);
+            var menuListaUusario = new MenuListaUsuario(usuario);
+            var menuActualiarInformacion = new MenuActualizarInformacion (usuario);
+            var menuVerificarInformacion = new MenuVerInformacion(usuario);
+            var menuActualizarPrecio = new ActualizarPrecioyStock(usuario);
 
-            PrincipalUsuario = new MenuCompuesto(menuAltaTicket) { Nombre = "Menu Cajero" };
+            PrincipalUsuario = new MenuCompuesto(menuAltaProducto) { Nombre = "Menu usuario" };
+            PrincipalUsuario = new MenuCompuesto(menuAltaCompra) { Nombre = "Menu Usuario" };
+            PrincipalUsuario = new MenuCompuesto(menuListaProductosVentas) { Nombre = "menu Usuario" };
+            PrincipalUsuario = new MenuCompuesto(menuListaUusario) { Nombre = "menu usuario" };
+            PrincipalUsuario = new MenuCompuesto(menuActualiarInformacion) { Nombre = "menu usuario" };
+            PrincipalUsuario = new MenuCompuesto (menuVerificarInformacion) {Nombre = "menu usuario"  };
+            PrincipalUsuario = new MenuCompuesto(menuActualizarPrecio) { Nombre = "menu usuario" };
+
+
+
+
+            
         }
+    }
+}
+        
 
 

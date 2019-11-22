@@ -13,15 +13,21 @@ namespace ConsolaAdministrador.Menus
         public override void mostrar()
         {
             base.mostrar();
+            
 
             var nombre = prompt("Ingrese nombre del producto");
             var precio = float.Parse(prompt("Ingrese precio unitario"));
             var cantidad = Convert.ToInt16(prompt("Ingrese stock"));
-            var fecha = Convert.ToDateTime(prompt("Ingrese fecha de publicación"));
+            string fecha = prompt("Ingrese fecha de publicación");
+            DateTime dateTime10 = Convert.ToDateTime(fecha);
+
+            
+            
+            
 
             Producto = new Producto()
             {
-                fechapublicacion = fecha,
+                fechapublicacion = dateTime10,
                 cantidad = cantidad,
                 PrecioUnitario = precio,
                 Nombre = nombre,

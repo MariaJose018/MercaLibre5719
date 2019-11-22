@@ -9,6 +9,11 @@ namespace ConsolaUsuario
 {
     public class MenuActualizarInformacion : MenuComponente
     {
+        public MenuActualizarInformacion(Usuario usuario)
+        {
+            this.usuario = usuario;
+        }
+
         public Usuario usuario { get; set; }
 
         public void menuActualizarInformacion()

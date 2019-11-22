@@ -9,6 +9,8 @@ namespace ConsolaUsuario
 {
     class MenuAltaCompra : MenuComponente
     {
+        private Usuario usuario;
+
         private Compraventa compraventa { get; set; }
         private MenuListaProductosVentas MenuListaProductosVenta { get; set; }
         public MenuListaUsuario MenuListaUsuario { get; set; }
@@ -17,6 +19,11 @@ namespace ConsolaUsuario
             MenuListaProductosVenta = menuListaProductosVentas;
             MenuListaUsuario = menuListaUsuario;
             Nombre = "Alta Venta";
+        }
+
+        public MenuAltaCompra(Usuario usuario)
+        {
+            this.usuario = usuario;
         }
 
         public override void mostrar()

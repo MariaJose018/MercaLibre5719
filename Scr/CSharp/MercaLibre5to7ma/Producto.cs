@@ -67,8 +67,6 @@ namespace Mercalibre15
             return cantidad <= this.cantidad;
         }
 
-
-
-
+      
     }
 }

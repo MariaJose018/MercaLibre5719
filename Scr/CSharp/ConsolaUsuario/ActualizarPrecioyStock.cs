@@ -7,6 +7,10 @@ namespace ConsolaUsuario
 {
     class ActualizarPrecioyStock :MenuListaProductosVentas
     {
+        public ActualizarPrecioyStock(Usuario usuario) : base(usuario)
+        {
+        }
+
         public Producto Producto { get; set; }
         public override void mostrar()
         {

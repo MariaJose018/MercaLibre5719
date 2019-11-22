@@ -8,6 +8,13 @@ namespace ConsolaUsuario
 {
     public class MenuAltaProducto : MenuComponente
     {
+        private Usuario usuario;
+
+        public MenuAltaProducto(Usuario usuario)
+        {
+            this.usuario = usuario;
+        }
+
         private Producto Producto { get; set; }
         
         public override void mostrar()
