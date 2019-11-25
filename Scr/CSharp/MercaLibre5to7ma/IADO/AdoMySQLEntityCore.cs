@@ -56,12 +56,12 @@ namespace Mercalibre15.ADO
 
         public List<Usuario> obtenerUsuarios()
         {
-            throw new System.NotImplementedException();
+            return Usuarios.ToList();
         }
 
         public List<Compraventa> obtenerventas()
         {
-            throw new System.NotImplementedException();
+            return compraVentas.ToList();
         }
 
         public List<Producto> obtenerproductos()

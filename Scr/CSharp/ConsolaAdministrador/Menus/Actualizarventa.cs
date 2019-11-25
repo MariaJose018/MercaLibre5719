@@ -11,6 +11,7 @@ namespace ConsolaAdministrador.Menus
     {       
         Producto producto { get; set; }
         public Compraventa compravent { get; set; }
+        public MenuListaProductosVentas MenuListaProductosVentas { get; set; }
         public override void mostrar()
         {
             Console.Clear();
@@ -25,19 +26,24 @@ namespace ConsolaAdministrador.Menus
             bool cambio = false;
            
 
-            if (preguntaCerrada("¿Eliminar ventas?"))
-            {
-                var ideliminar = Convert.ToInt32(prompt("ingrese el id de la venta"));
-                if ( ideliminar == compravent.Id && ideliminar == producto.Id)
-                {
-                    producto.eliminarventa(compravent);
-                }
-                else
+            
+                var venta = MenuListaProductosVentas.seleccionarElemento();
+                if (venta == null)
                 {
                     Console.WriteLine("Perdon aun no poseemos ventas realizadas");
                 }
+                else
+                {
+                  var ideliminar = Convert.ToInt32(prompt("ingrese el id de la venta"));
+                  if ( ideliminar == compravent.Id && ideliminar == producto.Id)
+                  {
+                    producto.eliminarventa(compravent);
+                  }
+                }
+
+
                 cambio = true;
-            }
+            
             
 
             if (cambio)

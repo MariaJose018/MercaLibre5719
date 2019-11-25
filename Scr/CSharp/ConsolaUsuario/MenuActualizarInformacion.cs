@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Text;
 using Mercalibre15;
 using MenuesConsola;
+using NETCore.Encrypt;
 
 namespace ConsolaUsuario
 {
@@ -42,12 +43,12 @@ namespace ConsolaUsuario
 
             if (preguntaCerrada("¿Cambiar teléfono?"))
             {
-                usuario.Telefono = int.Parse("Ingrese un teléfono:");
+                usuario.Telefono =int.Parse(prompt("Ingrese un teléfono:"));
                 cambio = true;
             }
             if (preguntaCerrada("¿Cambiar contraseña?"))
             {
-                usuario.Contrasenia = prompt("Ingrese una contraseña nueva:");
+                usuario.Contrasenia = EncryptProvider.Sha256(prompt("Ingrese una contraseña nueva:"));
                 cambio = true;
             }
 

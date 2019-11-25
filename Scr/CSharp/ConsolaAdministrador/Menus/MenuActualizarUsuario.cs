@@ -5,6 +5,7 @@ using Mercalibre15;
 using Mercalibre15.ADO;
 using ConsolaAdministrador.Menus;
 using MenuesConsola;
+using NETCore.Encrypt;
 
 namespace ConsolaAdministrador.Menus
 {
@@ -22,8 +23,8 @@ namespace ConsolaAdministrador.Menus
 
 
 
-            if (preguntaCerrada("¿actualizar usuario?"))
-            {
+            
+            
                 var usuario = MenuListaUsuario.seleccionarElemento();
 
                     var usuarioid = Convert.ToInt32(prompt("ingrese id del usuario"));
@@ -32,19 +33,19 @@ namespace ConsolaAdministrador.Menus
                         usuario.Nombre = prompt("Ingrese nuevo nombre:");
                         usuario.Apellido = prompt("Ingrese nuevo apellido:");
                         usuario.Email = prompt("Ingrese nuevo email:");
-                        usuario.Contrasenia = prompt("Ingrese nuevo contrasenia:");
+                        usuario.Contrasenia = EncryptProvider.Sha256(prompt("Ingrese nuevo contrasenia:"));
                         usuario.Nombredeusuario = prompt("Ingrese nuevo nombre de usuario:");
 
                     }
                     cambio = true;
                 
-            }
+            
 
             if (cambio)
             {
                 try
                 {
-                    AdoAdministrador.ADO.Ausuario(usuario);
+                    AdoAdministrador.ADO.mUsuario(usuario);
                     Console.WriteLine("Información actualizada con exito");
                 }
                 catch (Exception e)

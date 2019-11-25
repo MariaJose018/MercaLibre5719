@@ -9,10 +9,10 @@ namespace ConsolaAdministrador
         static void Main(string[] args)
         {
             var menuListaUsuario = new menuListaUsuario() { Nombre = "Lista de Usuarios" };
-            var menuActualizarUsuario = new MenuActualizarUsuario() { Nombre = "Actualizar Usuario",  };
+            var menuActualizarUsuario = new MenuActualizarUsuario() { Nombre = "Actualizar Usuario",MenuListaUsuario = menuListaUsuario  };
             var menuListaProductoVenta = new MenuListaProductosVentas () { Nombre = "Productos venta " };
             var menuAltaUsuario = new MenuAltaUsuario() { Nombre = "Alta Usuario" };
-            var actualizarventa = new Actualizarventa() { Nombre = "actualizar las ventas" };
+            var actualizarventa = new Actualizarventa() { Nombre = "restablecer producto", MenuListaProductosVentas = menuListaProductoVenta };
 
 
             
@@ -30,12 +30,9 @@ namespace ConsolaAdministrador
             menuprincipal.agregarMenu(menuProducto);
             menuprincipal.agregarMenu(menuAdministrador);
 
-            menuprincipal.mostrar();
-        
-           
+            menuprincipal.mostrar();     
             
         }
-        
         
     }
 }
