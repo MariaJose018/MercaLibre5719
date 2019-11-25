@@ -67,6 +67,14 @@ namespace Mercalibre15
             return cantidad <= this.cantidad;
         }
 
-      
+
+        public void eliminarventa(Compraventa compraventa)
+        {
+           cantidad = + compraventa.Cantunidades;
+           productosEnVentas.Remove(compraventa);
+           
+        }
+
+
     }
 }

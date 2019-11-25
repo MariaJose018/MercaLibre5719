@@ -69,8 +69,12 @@ namespace Mercalibre15
         {
             return ventas.Sum(P => P.recaudacionpara(inicio ,fin ));
         }
+        public void eliminarcompra(Compraventa compraventa)
+        {
+            compras.Remove(compraventa);
+            
+        }
 
-       
         public void comprar(Producto producto, int cantidad)
         {
             if (producto.stockSuficiente(cantidad))

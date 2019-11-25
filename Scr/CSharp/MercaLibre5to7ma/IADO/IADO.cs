@@ -17,6 +17,6 @@ namespace Mercalibre15.ADO
 
         Usuario verificarUsuario(string email, string contrasenia);
 
-        List<Producto> obtenerProductosDe(Usuario usuario);
+
     }
 }

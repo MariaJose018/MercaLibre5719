@@ -3,39 +3,39 @@ using System.Collections.Generic;
 using System.Text;
 using Mercalibre15;
 using MenuesConsola;
+using System.Linq;
 
 namespace ConsolaAdministrador.Menus
 {
-    public class MenuActualizarProducto : MenuListaProductosVentas
-    {
-        public Producto Producto { get; set; }
+    public class Actualizarventa : MenuListaProductosVentas
+    {       
+        Producto producto { get; set; }
+        public Compraventa compravent { get; set; }
         public override void mostrar()
         {
             Console.Clear();
-            Console.WriteLine(Producto);
+            Console.WriteLine(compravent);
 
-            Producto = seleccionarElemento();
+            producto = seleccionarElemento ();
             Console.WriteLine();
-            menuModificiarProducto();
+            eliminarVenta();
         }
 
-        private void menuModificiarProducto()
+        private void eliminarVenta()
         {
             bool cambio = false;
            
 
-            if (preguntaCerrada("¿Incrementar stock?"))
+            if (preguntaCerrada("¿Eliminar ventas?"))
             {
-                var cantidad = Convert.ToInt16(prompt("Ingrese stock a incrementar"));
-                Producto.cantidad += cantidad;
+                var ideliminar = Convert.ToInt32(prompt("ingrese el id de la venta"));
+                if ( ideliminar == compravent.Id && ideliminar == producto.Id)
+                {
+                    producto.eliminarventa(compravent);
+                }
                 cambio = true;
             }
-            if (preguntaCerrada("¿Decrementar stock?"))
-            {
-                var cantidad = Convert.ToInt16(prompt("Ingrese stock a decrementar"));
-                Producto.cantidad -= cantidad;
-                cambio = true;
-            }
+            
 
             if (cambio)
             {

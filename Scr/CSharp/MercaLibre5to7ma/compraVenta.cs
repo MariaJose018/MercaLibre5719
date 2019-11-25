@@ -48,6 +48,10 @@ namespace Mercalibre15
         {
             return inicio <= Fechayhora && Fechayhora <= fin;
         }
+        public void eliminarusuariodelaventa ()
+        {
+            Usuario = null;
+        }
 
         [NotMapped]
         public double total => Cantunidades * Precio;
