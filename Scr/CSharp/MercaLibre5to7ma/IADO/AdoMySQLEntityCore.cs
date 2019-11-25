@@ -14,7 +14,7 @@ namespace Mercalibre15.ADO
         }
 
         public DbSet<Producto> Productos { get; set; }
-        public DbSet<Compraventa> Compraventa { get; set; }
+        public DbSet<Compraventa> compraVentas { get; set; }
         public DbSet<Usuario> Usuarios { get; set; }
 
 
@@ -33,7 +33,7 @@ namespace Mercalibre15.ADO
 
         public void Aproductoventa(Compraventa compraVenta)
         {
-            Compraventa.Add(compraVenta);
+            compraVentas.Add(compraVenta);
             SaveChanges();
         }
 
@@ -43,6 +43,11 @@ namespace Mercalibre15.ADO
             SaveChanges();
         }
 
+        public void actualizarestadodelproducto ( Compraventa compraventa )
+        {
+            compraVentas.Remove(compraventa);
+            SaveChanges();
+        }
 
 
         public List<Usuario> obtenerUsuarios()
