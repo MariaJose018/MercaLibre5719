@@ -19,7 +19,7 @@ namespace ConsolaAdministrador
             var apellido = prompt("Ingrese apellido");
             var pass = ReadPassword("Ingrese contraseña: ");
             var mail = prompt("Ingrese mail "); 
-            var telefono = Convert.ToInt16(prompt("Ingrese telefono"));
+            var telefono = Convert.ToInt32(prompt("Ingrese telefono"));
             var nombreusuario = prompt("Ingrese nombre de usuario");
             pass = EncryptProvider.Sha256(pass);
 

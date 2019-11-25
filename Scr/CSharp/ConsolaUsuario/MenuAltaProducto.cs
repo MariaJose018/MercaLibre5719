@@ -8,7 +8,7 @@ namespace ConsolaUsuario
 {
     public class MenuAltaProducto : MenuComponente
     {
-        private Usuario usuario;
+        public Usuario usuario;
 
         public MenuAltaProducto(Usuario usuario)
         {
@@ -33,7 +33,7 @@ namespace ConsolaUsuario
                 PrecioUnitario = precio,
                 Nombre = nombre,
             };
-
+            usuario.agregarproducto(Producto);
             try
             {
                 AdoUsuario.ADO.aproducto(Producto);

@@ -40,7 +40,11 @@ namespace Mercalibre15
 
 
 
-        public Usuario() { }
+        public Usuario()
+        {
+            compras = new List<Compraventa>();
+            ventas = new List<Producto>();
+        }
         public void agregarCompraVenta(Compraventa compraventa)
         {
             compras.Add(compraventa);
