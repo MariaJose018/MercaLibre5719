@@ -9,6 +9,7 @@ namespace ConsolaUsuario
     {
         public ActualizarPrecioyStock(Usuario usuario) : base(usuario)
         {
+
         }
 
         public Producto producto { get; set; }
@@ -50,7 +51,7 @@ namespace ConsolaUsuario
             {
                 try
                 {
-                    AdoUsuario.ADO.aproducto(producto);
+                    AdoUsuario.ADO.mProducto(producto);
                     Console.WriteLine("Producto actualizado con exito");
                 }
                 catch (Exception e)

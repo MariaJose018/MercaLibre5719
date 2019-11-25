@@ -62,7 +62,7 @@ namespace ConsolaUsuario
             menuVenta.agregarMenu(menuAltaCompra);
             menuVenta.agregarMenu(menuListaProductoVenta);
             
-            PrincipalUsuario = new MenuCompuesto() { Nombre = "Menu Administrador" };
+            PrincipalUsuario = new MenuCompuesto() { Nombre = "Menu Usuario" };
             PrincipalUsuario.agregarMenu(menuProducto);
             PrincipalUsuario.agregarMenu(PrincipalUsuario);
         }

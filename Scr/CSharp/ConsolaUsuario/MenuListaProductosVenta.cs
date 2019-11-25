@@ -15,7 +15,8 @@ namespace ConsolaUsuario
             this.usuario = usuario;
         }
 
-        public override void imprimirElemento(Producto p) => Console.WriteLine(p.ToString());
+        public override void imprimirElemento(Producto p)
+            => Console.WriteLine($"{p.Nombre} - ${p.PrecioUnitario:0.00} - {p.cantidad}");
 
         public override List<Producto> obtenerLista() => AdoUsuario.ADO.obtenerproductos();
     }
