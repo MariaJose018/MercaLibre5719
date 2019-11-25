@@ -31,10 +31,8 @@ namespace ConsolaAdministrador
                 Contrasenia = pass,
                 Email = mail,
                 Telefono = telefono,
-                Nombredeusuario = nombreusuario,
-               
-            };
-           
+                Nombredeusuario = nombreusuario,               
+            };           
 
             try
             {
@@ -43,7 +41,7 @@ namespace ConsolaAdministrador
             }
             catch (Exception e)
             {
-                Console.WriteLine($"No se pudo dar de alta: {e.Message}");
+                Console.WriteLine($"No se pudo dar de alta: {e.Message} - {e.InnerException.Message}");
             }
             Console.ReadKey();
         }
