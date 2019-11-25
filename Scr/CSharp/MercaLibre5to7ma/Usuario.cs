@@ -81,7 +81,10 @@ namespace Mercalibre15
             {
                 Compraventa compraVenta = new Compraventa(producto, this, cantidad);
                 producto.DecrementarCantidad(cantidad);
+                compras.Add(compraVenta);
+                producto.agregarventas(compraVenta);
                 
+
             }
         }
     }

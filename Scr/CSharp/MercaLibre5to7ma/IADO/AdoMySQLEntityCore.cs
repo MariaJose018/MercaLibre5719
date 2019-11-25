@@ -91,6 +91,7 @@ namespace Mercalibre15.ADO
             =>  Productos.
                 Where(p => p.Nombre.Contains(nombre) && p.usuario != usuario).
                 Include(p=>p.usuario).
+                Include(p=>p.productosEnVentas).
                 ToList();
     }
 }

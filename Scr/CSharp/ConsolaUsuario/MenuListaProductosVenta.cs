@@ -8,11 +8,11 @@ namespace ConsolaUsuario
 {
    public class MenuListaProductosVentas : MenuListador <Producto>
    {
-        private Usuario usuario;
+        public Usuario Usuario { get; set; }
 
         public MenuListaProductosVentas(Usuario usuario)
         {
-            this.usuario = usuario;
+            this.Usuario = usuario;
         }
 
         public override void imprimirElemento(Producto p)
