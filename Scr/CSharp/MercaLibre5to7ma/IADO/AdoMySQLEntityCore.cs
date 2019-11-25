@@ -77,7 +77,8 @@ namespace Mercalibre15.ADO
         public List<Producto> obtenerProductosDe(Usuario usuario)
         {
             return Productos
-                  .Where(x => x.usuario == usuario).ToList();
+                  .Where(x => x.usuario == usuario).ToList()
+                  ;
                    
         }
 
