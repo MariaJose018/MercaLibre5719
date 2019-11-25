@@ -10,7 +10,7 @@ namespace ConsolaAdministrador.Menus
         {
             public override void imprimirElemento(Usuario usuario)
             {
-                Console.WriteLine(usuario);
+                Console.WriteLine($"ID :{usuario.Id} Nombre : {usuario.Nombre} Apellido :{usuario.Apellido}");
             }
 
             public override List<Usuario> obtenerLista() =>AdoAdministrador.ADO.obtenerUsuarios();

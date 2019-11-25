@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 using Mercalibre15;
+using Mercalibre15.ADO;
 using ConsolaAdministrador.Menus;
 using MenuesConsola;
 
@@ -10,43 +11,33 @@ namespace ConsolaAdministrador.Menus
     public class MenuActualizarUsuario : MenuComponente
     {
         public Usuario usuario { get; set; }
+        public List<Usuario> usuarios { get; set; }
+        public menuListaUsuario MenuListaUsuario { get; set; }
 
-        public void menuActualizarInformacion()
-        {
 
-        }
         public override void mostrar()
         {
             base.mostrar();
             bool cambio = false;
 
-            if (preguntaCerrada("¿Cambiar nombre?"))
-            {
-                usuario.Nombre = prompt("Ingrese nombre");
-                cambio = true;
-            }
 
-            if (preguntaCerrada("¿Cambiar apellido?"))
-            {
-                usuario.Apellido = prompt("Ingrese apellido:");
-                cambio = true;
-            }
 
-            if (preguntaCerrada("¿Cambiar nombre de usuario?"))
+            if (preguntaCerrada("¿actualizar usuario?"))
             {
-                usuario.Nombredeusuario = prompt("Ingrese nombre de usuario:");
-                cambio = true;
-            }
+                var usuario = MenuListaUsuario.seleccionarElemento();
 
-            if (preguntaCerrada("¿Cambiar teléfono?"))
-            {
-                usuario.Telefono = int.Parse("Ingrese un teléfono:");
-                cambio = true;
-            }
-            if (preguntaCerrada("¿Cambiar contraseña?"))
-            {
-                usuario.Contrasenia = prompt("Ingrese una contraseña nueva:");
-                cambio = true;
+                    var usuarioid = Convert.ToInt32(prompt("ingrese id del usuario"));
+                    if (usuario.Id == usuarioid)
+                    {
+                        usuario.Nombre = prompt("Ingrese nuevo nombre:");
+                        usuario.Apellido = prompt("Ingrese nuevo apellido:");
+                        usuario.Email = prompt("Ingrese nuevo email:");
+                        usuario.Contrasenia = prompt("Ingrese nuevo contrasenia:");
+                        usuario.Nombredeusuario = prompt("Ingrese nuevo nombre de usuario:");
+
+                    }
+                    cambio = true;
+                
             }
 
             if (cambio)

@@ -2,21 +2,22 @@
 using ConsolaAdministrador.Menus;
 using Mercalibre15;
 
-
 namespace ConsolaAdministrador
 {
     public class Program
     {
         static void Main(string[] args)
         {
-            var menuActualizarUsuario = new MenuActualizarUsuario() { Nombre = "Actualizar Usuario" };
-            var menuListaProductoVenta = new MenuListaProductosVentas() { Nombre = "Lista de productos en ventas " };
-            var menuAltaUsuario = new MenuAltaUsuario() { Nombre = "Alta Usuario" };
             var menuListaUsuario = new menuListaUsuario() { Nombre = "Lista de Usuarios" };
+            var menuActualizarUsuario = new MenuActualizarUsuario() { Nombre = "Actualizar Usuario",  };
+            var menuListaProductoVenta = new MenuListaProductosVentas () { Nombre = "Productos venta " };
+            var menuAltaUsuario = new MenuAltaUsuario() { Nombre = "Alta Usuario" };
+            var actualizarventa = new Actualizarventa() { Nombre = "actualizar las ventas" };
 
 
-
+            
             var menuProducto = new MenuCompuesto() { Nombre = "Productos" };
+            menuProducto.agregarMenu(actualizarventa);
             menuProducto.agregarMenu(menuListaProductoVenta);
 
             
@@ -25,7 +26,16 @@ namespace ConsolaAdministrador
             menuAdministrador.agregarMenu(menuListaUsuario);
             menuAdministrador.agregarMenu(menuActualizarUsuario);
 
-            menuAdministrador.mostrar();
+            var menuprincipal = new MenuCompuesto() { Nombre = "menu administrador" };
+            menuprincipal.agregarMenu(menuProducto);
+            menuprincipal.agregarMenu(menuAdministrador);
+
+            menuprincipal.mostrar();
+        
+           
+            
         }
+        
+        
     }
 }

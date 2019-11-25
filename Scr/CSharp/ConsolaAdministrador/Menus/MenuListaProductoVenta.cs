@@ -8,9 +8,9 @@ namespace ConsolaAdministrador
 {
         public class MenuListaProductosVentas : MenuListador<Producto>
         {
-            public override void imprimirElemento(Producto p) => Console.WriteLine(p.ToString());
+            public override void imprimirElemento(Producto producto) => Console.WriteLine($"ID:{producto.Id} Nombre: {producto.Nombre}");
 
             public override List<Producto> obtenerLista() => AdoAdministrador.ADO.obtenerproductos();
-        }
+       }
     
 }

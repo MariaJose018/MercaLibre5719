@@ -16,7 +16,6 @@ namespace ConsolaAdministrador.Menus
             Console.Clear();
             Console.WriteLine(compravent);
 
-            producto = seleccionarElemento ();
             Console.WriteLine();
             eliminarVenta();
         }
@@ -32,6 +31,10 @@ namespace ConsolaAdministrador.Menus
                 if ( ideliminar == compravent.Id && ideliminar == producto.Id)
                 {
                     producto.eliminarventa(compravent);
+                }
+                else
+                {
+                    Console.WriteLine("Perdon aun no poseemos ventas realizadas");
                 }
                 cambio = true;
             }

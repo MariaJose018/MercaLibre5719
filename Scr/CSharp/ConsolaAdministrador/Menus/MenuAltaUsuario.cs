@@ -11,6 +11,7 @@ namespace ConsolaAdministrador
     class MenuAltaUsuario : MenuComponente
     {
         public Usuario usuario { get; set; }
+        public List<Usuario>usuarios { get; set; }
         public override void mostrar()
         {
             base.mostrar();
@@ -30,9 +31,10 @@ namespace ConsolaAdministrador
                 Contrasenia = pass,
                 Email = mail,
                 Telefono = telefono,
-                Nombredeusuario = nombreusuario
-                
+                Nombredeusuario = nombreusuario,
+               
             };
+           
 
             try
             {
