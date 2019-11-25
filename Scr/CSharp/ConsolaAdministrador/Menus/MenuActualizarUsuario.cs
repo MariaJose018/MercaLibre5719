@@ -13,6 +13,11 @@ namespace ConsolaAdministrador.Menus
 
         public void menuActualizarInformacion()
         {
+
+        }
+        public override void mostrar()
+        {
+            base.mostrar();
             bool cambio = false;
 
             if (preguntaCerrada("¿Cambiar nombre?"))
@@ -55,9 +60,9 @@ namespace ConsolaAdministrador.Menus
                 {
                     Console.WriteLine($"No se pudo modificar por: {e.InnerException.Message}");
                 }
-                Console.ReadKey();
             }
+            Console.ReadKey();
         }
-        
     }
 }
+

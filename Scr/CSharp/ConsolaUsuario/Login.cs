@@ -52,6 +52,7 @@ namespace ConsolaUsuario
             var menuAltaProducto = new MenuAltaProducto(usuario) { Nombre = " Alta Producto" };
             var menuListaProductoVenta = new MenuListaProductosVentas(usuario) { Nombre = "Lista de productos en ventas " };
             var menuActualizarPrecioyStock = new ActualizarPrecioyStock(usuario) { Nombre = "Actualizar precio y stock" };
+            var actualizarInfo = new MenuActualizarInformacion(usuario) { Nombre = "Actualizar información" };
 
             var menuProducto = new MenuCompuesto() { Nombre = "Productos" };
             menuProducto.agregarMenu(menuListaProductoVenta);
@@ -61,10 +62,12 @@ namespace ConsolaUsuario
             var menuVenta = new MenuCompuesto() { Nombre = "Usuarios" };
             menuVenta.agregarMenu(menuAltaCompra);
             menuVenta.agregarMenu(menuListaProductoVenta);
+
             
-            PrincipalUsuario = new MenuCompuesto() { Nombre = "Menu Administrador" };
+            PrincipalUsuario = new MenuCompuesto() { Nombre = "Menu Usuario" };
             PrincipalUsuario.agregarMenu(menuProducto);
             PrincipalUsuario.agregarMenu(PrincipalUsuario);
+            PrincipalUsuario.agregarMenu(actualizarInfo);
         }
     }
 }
