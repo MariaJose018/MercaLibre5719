@@ -25,11 +25,12 @@ namespace ConsolaAdministrador
 
                 var nombre = prompt("Ingrese nombre del producto");
                 
-                var cantidad = Convert.ToInt16(prompt("Ingrese la cantidad"));
-                
-                var fechayhora = Convert.ToDateTime(prompt("Ingrese la fecha y hora"));
+                var cantidad = Convert.ToInt16(prompt("Ingrese la cantidad")); 
+            
                 Console.WriteLine("Seleccione el Producto x)");
+
                 var producto = MenuListaProductosVenta.seleccionarElemento();
+
                 var usuario = MenuListaUsuario.seleccionarElemento();
 
                 Compraventa compraventa = new Compraventa()

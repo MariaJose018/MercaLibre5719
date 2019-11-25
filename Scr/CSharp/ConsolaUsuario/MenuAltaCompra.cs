@@ -34,7 +34,6 @@ namespace ConsolaUsuario
             var usuario = (prompt("Ingrese el nombre del usuario"));
             var cantidad = Convert.ToInt16(prompt("Ingrese la cantidad"));
             var precio = Convert.ToInt32(prompt("Ingrese el precio unitario"));
-            var fechayhora = Convert.ToDateTime(prompt("Ingrese la fecha y hora"));
             Console.WriteLine("Seleccione el Producto x)");
             var producto = MenuListaProductosVenta.seleccionarElemento();
             var Usuario = MenuListaUsuario.seleccionarElemento();
