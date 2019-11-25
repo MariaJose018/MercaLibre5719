@@ -41,7 +41,7 @@ namespace ConsolaAdministrador.Menus
             {
                 try
                 {
-                    AdoAdministrador.ADO.aproducto(Producto);
+                    AdoAdministrador.ADO.aproducto(producto);
                     Console.WriteLine("Producto actualizado con exito");
                 }
                 catch (Exception e)

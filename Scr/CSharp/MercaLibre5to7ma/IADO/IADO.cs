@@ -6,6 +6,7 @@ namespace Mercalibre15.ADO
 {
     public interface IADO
     {
+        void mUsuario(Usuario usuario);
         void Ausuario(Usuario usuario);
         List<Usuario> obtenerUsuarios();
 

@@ -16,8 +16,10 @@ namespace ConsolaUsuario
 
         public Usuario usuario { get; set; }
 
-        public void menuActualizarInformacion()
+        public override void mostrar()
         {
+
+            base.mostrar();
             bool cambio = false;
 
             if (preguntaCerrada("¿Cambiar nombre?"))
@@ -38,12 +40,6 @@ namespace ConsolaUsuario
                 cambio = true;
             }
 
-            if (preguntaCerrada("¿Cambiar apellido?"))
-            {
-                usuario.Apellido = prompt("Ingrese apellido:");
-                cambio = true;
-            }
-
             if (preguntaCerrada("¿Cambiar teléfono?"))
             {
                 usuario.Telefono = int.Parse("Ingrese un teléfono:");
@@ -59,7 +55,7 @@ namespace ConsolaUsuario
             {
                 try
                 {
-                    AdoUsuario.ADO.Ausuario(usuario);
+                    AdoUsuario.ADO.mUsuario(usuario);
                     Console.WriteLine("Información actualizada con exito");
                 }
                 catch (Exception e)
@@ -67,8 +63,10 @@ namespace ConsolaUsuario
                     Console.WriteLine($"No se pudo modificar por: {e.InnerException.Message}");
                 }
                 Console.ReadKey();
+
+
             }
+
         }
-        
     }
 }

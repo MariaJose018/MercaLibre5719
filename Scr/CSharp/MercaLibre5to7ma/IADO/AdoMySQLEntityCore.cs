@@ -80,5 +80,11 @@ namespace Mercalibre15.ADO
                   .Where(x => x.usuario == usuario).ToList();
                    
         }
+
+        public void mUsuario(Usuario usuario)
+        {
+            this.Attach<Usuario>(usuario);
+            SaveChanges();
+        }
     }
 }
