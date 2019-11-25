@@ -36,7 +36,11 @@ namespace Mercalibre15.ADO
             Compraventa.Add(compraVenta);
             SaveChanges();
         }
-
+        public void mProducto(Producto producto)
+        {
+            this.Attach<Producto>(producto);
+            SaveChanges();
+        }
         public void aproducto(Producto producto)
         {
             Productos.Add(producto);
