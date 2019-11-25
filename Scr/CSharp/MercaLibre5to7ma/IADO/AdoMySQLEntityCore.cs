@@ -22,7 +22,10 @@ namespace Mercalibre15.ADO
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
 
-            optionsBuilder.UseMySQL("server=localhost;database=MercaLibre;user=root;password=root");
+            if (!optionsBuilder.IsConfigured)
+            {
+                optionsBuilder.UseMySQL("server=localhost;database=MercaLibre;user=root;password=root");
+            }
         }
 
         public void Ausuario(Usuario usuario)
