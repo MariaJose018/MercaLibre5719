@@ -9,6 +9,7 @@ namespace ConsolaUsuario
     {
         public ActualizarPrecioyStock(Usuario usuario) : base(usuario)
         {
+
         }
 
         public Producto producto { get; set; }

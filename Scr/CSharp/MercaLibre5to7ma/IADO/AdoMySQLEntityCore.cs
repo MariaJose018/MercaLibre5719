@@ -65,6 +65,11 @@ namespace Mercalibre15.ADO
         public Usuario verificarUsuario(string email, string contrasenia)
             => Usuarios.FirstOrDefault(u => u.Email == email && u.Contrasenia == contrasenia);
 
-       
+        public List<Producto> obtenerProductosDe(Usuario usuario)
+        {
+            return Productos
+                  .Where(x => x.usuario == usuario).ToList();
+                   
+        }
     }
 }
